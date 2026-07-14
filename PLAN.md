@@ -83,29 +83,29 @@ This design decision is a great README/interview talking point.
 - `GET /candidates`: list extracted profiles
 - **Done when:** all sample CVs ingested; Qdrant dashboard shows chunks with correct payloads; profiles look right.
 
-### Phase 2 — Chat v1: naive RAG + citations + tracing (~1 day)
+### Phase 2 — Chat v1: naive RAG + citations + tracing (~1 day) ✅ DONE
 - `POST /chat`: dense-only top-5 retrieval → Gemini answer, prompt forces inline citations `[1]`, `[2]` mapped to source chunks returned in the response
 - Conversation memory (last N turns in the prompt; session id per chat)
 - Wire **Langfuse** now (LlamaIndex instrumentation + FastAPI middleware) — you'll use the traces to debug everything after this point
 - **Done when:** curl a question, get a cited answer; the full trace (retrieval → LLM) is visible in Langfuse.
 
-### Phase 3 — Gold set + eval harness → BASELINE numbers (~1 day)
+### Phase 3 — React frontend (~2 days) [moved up so the app is testable in the browser early] ✅ DONE
+- **Upload page**: drag-and-drop multi-file, ingestion progress, candidate cards appear from profile JSON
+- **Chat page**: message list, input, citation chips ([1], [2]) that expand the source chunk + candidate name
+- **Candidates page**: profile list + detail view
+- Simple clean styling. Streaming responses optional polish.
+- **Done when:** full flow works locally end-to-end in the browser.
+
+### Phase 4 — Gold set + eval harness → BASELINE numbers (~1 day)
 - Write the gold set: 25–40 questions over the fixed sample CVs (see format below), covering all 3 intents
 - `eval/run_eval.py`: runs every gold question through the pipeline → RAGAS (faithfulness, answer relevancy, context precision/recall) + custom hit-rate@5 and MRR + latency → markdown report
 - **Done when:** you have a baseline metrics table committed. Don't skip this — the before/after story needs the "before."
 
-### Phase 4 — Retrieval upgrades → AFTER numbers (~1–2 days)
+### Phase 5 — Retrieval upgrades → AFTER numbers (~1–2 days)
 - Switch retrieval to hybrid (dense + BM25, RRF fusion) → re-run eval
 - Add bge-reranker: retrieve top-20 → rerank → keep top-5 → re-run eval
 - Add intent routing + candidate filters + job-fit aggregation (design above) → re-run eval
 - **Done when:** metrics table shows each step's impact, e.g. "hit-rate 71% → 89%". This table is the centerpiece of the README.
-
-### Phase 5 — React frontend (~2 days)
-- **Upload page**: drag-and-drop multi-file, ingestion progress, candidate cards appear from profile JSON
-- **Chat page**: message list, input, citation chips ([1], [2]) that expand the source chunk + candidate name
-- **Candidates page**: profile list + detail view
-- Simple clean styling (Tailwind). Streaming responses optional polish.
-- **Done when:** full flow works locally end-to-end in the browser.
 
 ### Phase 6 — Ship it (~1 day)
 - `Dockerfile` for backend (build with `podman build`)

@@ -4,8 +4,10 @@ import hashlib
 import re
 
 from fastapi import APIRouter, File, HTTPException, UploadFile
+from pydantic import BaseModel
 
 from app import db, vectorstore
+from app.chat import ChatError, chat
 from app.chunking import chunk_cv
 from app.parsing import ParseError, parse_document
 from app.profiles import ProfileExtractionError, extract_profile
@@ -100,3 +102,19 @@ def candidate_detail(candidate_id: str) -> dict:
 @router.get("/stats")
 def stats() -> dict:
     return {"candidates": db.count_candidates(), "chunks_indexed": vectorstore.count_points()}
+
+
+class ChatRequest(BaseModel):
+    message: str
+    session_id: str | None = None
+
+
+@router.post("/chat")
+def chat_endpoint(request: ChatRequest) -> dict:
+    message = request.message.strip()
+    if not message:
+        raise HTTPException(status_code=400, detail="message must not be empty")
+    try:
+        return chat(message, request.session_id)
+    except ChatError as exc:
+        raise HTTPException(status_code=502, detail=str(exc)) from exc

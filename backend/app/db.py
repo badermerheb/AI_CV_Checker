@@ -35,6 +35,18 @@ def init_db() -> None:
             )
             """
         )
+        conn.execute(
+            """
+            CREATE TABLE IF NOT EXISTS messages (
+                id         INTEGER PRIMARY KEY AUTOINCREMENT,
+                session_id TEXT NOT NULL,
+                role       TEXT NOT NULL,
+                content    TEXT NOT NULL,
+                created_at TEXT DEFAULT CURRENT_TIMESTAMP
+            )
+            """
+        )
+        conn.execute("CREATE INDEX IF NOT EXISTS idx_messages_session ON messages(session_id)")
 
 
 def upsert_candidate(candidate_id: str, profile: dict, filename: str, num_chunks: int) -> None:
@@ -102,3 +114,21 @@ def get_candidate(candidate_id: str) -> dict | None:
 def count_candidates() -> int:
     with _conn() as conn:
         return conn.execute("SELECT COUNT(*) FROM candidates").fetchone()[0]
+
+
+def add_message(session_id: str, role: str, content: str) -> None:
+    with _conn() as conn:
+        conn.execute(
+            "INSERT INTO messages (session_id, role, content) VALUES (?, ?, ?)",
+            (session_id, role, content),
+        )
+
+
+def get_history(session_id: str, limit: int = 6) -> list[dict]:
+    """Last `limit` messages of a session, oldest first."""
+    with _conn() as conn:
+        rows = conn.execute(
+            "SELECT role, content FROM messages WHERE session_id = ? ORDER BY id DESC LIMIT ?",
+            (session_id, limit),
+        ).fetchall()
+    return [dict(row) for row in reversed(rows)]

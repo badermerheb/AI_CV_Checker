@@ -1,13 +1,10 @@
 """Structured candidate-profile extraction from raw CV text via Gemini."""
 
-import time
-from functools import lru_cache
-
-from google import genai
 from google.genai import errors as genai_errors
 from pydantic import BaseModel, Field
 
 from app.config import settings
+from app.llm import generate_with_retry
 
 
 class EducationItem(BaseModel):
@@ -48,38 +45,20 @@ CV text:
 \"\"\"
 """
 
-_RETRYABLE_CODES = {429, 500, 503}
-_MAX_ATTEMPTS = 4
-
-
-@lru_cache
-def _client() -> genai.Client:
-    return genai.Client(api_key=settings.google_api_key)
-
-
 def extract_profile(cv_text: str) -> CandidateProfile:
-    last_error: Exception | None = None
-    for attempt in range(_MAX_ATTEMPTS):
-        try:
-            response = _client().models.generate_content(
-                model=settings.gemini_model,
-                contents=_PROMPT.format(cv_text=cv_text),
-                config={
-                    "response_mime_type": "application/json",
-                    "response_schema": CandidateProfile,
-                    "temperature": 0,
-                },
-            )
-            profile = response.parsed
-            if isinstance(profile, CandidateProfile) and profile.name.strip():
-                return profile
-            raise ProfileExtractionError("model returned an empty or invalid profile")
-        except genai_errors.APIError as exc:
-            last_error = exc
-            if exc.code in _RETRYABLE_CODES and attempt < _MAX_ATTEMPTS - 1:
-                time.sleep(15 * (attempt + 1))  # free-tier rate limits: back off and retry
-                continue
-            raise ProfileExtractionError(f"Gemini API error {exc.code}: {exc.message}") from exc
-        except ProfileExtractionError:
-            raise
-    raise ProfileExtractionError(str(last_error))
+    try:
+        response = generate_with_retry(
+            model=settings.gemini_model,
+            contents=_PROMPT.format(cv_text=cv_text),
+            config={
+                "response_mime_type": "application/json",
+                "response_schema": CandidateProfile,
+                "temperature": 0,
+            },
+        )
+    except genai_errors.APIError as exc:
+        raise ProfileExtractionError(f"Gemini API error {exc.code}: {exc.message}") from exc
+    profile = response.parsed
+    if isinstance(profile, CandidateProfile) and profile.name.strip():
+        return profile
+    raise ProfileExtractionError("model returned an empty or invalid profile")
