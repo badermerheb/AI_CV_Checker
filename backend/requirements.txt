@@ -3,3 +3,19 @@ uvicorn[standard]
 python-dotenv
 pydantic-settings
 httpx
+python-multipart
+
+# document parsing
+PyMuPDF
+docx2txt
+
+# LLM
+google-genai
+
+# RAG core
+# NOTE: llama-index-embeddings-fastembed is NOT used - it pins Python <3.13.
+# app/embeddings.py wraps fastembed directly instead.
+llama-index-core
+llama-index-vector-stores-qdrant
+qdrant-client
+fastembed

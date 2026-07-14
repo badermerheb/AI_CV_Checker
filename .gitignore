@@ -7,6 +7,12 @@ __pycache__/
 # Env / secrets
 .env
 
+# Local data
+*.db
+
+# Personal/real CVs never go in the repo (synthetic sample CVs are committed)
+data/sample_cvs/BaderMerheb_CV.pdf
+
 # Node
 node_modules/
 dist/

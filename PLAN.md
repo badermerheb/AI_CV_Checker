@@ -41,7 +41,7 @@ Qdrant  ── runs in Podman container (dev) / Qdrant Cloud free tier (prod)
 | Sparse/keyword | Qdrant BM25 (via FastEmbed sparse) | Gives the "hybrid" requirement with `enable_hybrid=True` in LlamaIndex's QdrantVectorStore — no separate keyword engine needed |
 | Reranker | BAAI/bge-reranker-v2-m3 (local cross-encoder) | The roadmap's pick; big precision win, free, CPU-friendly at top-20 candidates |
 | Vector DB | Qdrant in **Podman** (dev), Qdrant Cloud free 1GB (deployed demo) | Qdrant is one container — Podman handles it identically to Docker (`podman run`). No reason to learn Docker for this; the deploy Dockerfile builds fine with `podman build` too |
-| LLM | Gemini free tier (`gemini-2.5-flash`) | Free, available in Lebanon (Groq is not), strong at citation-following and JSON extraction, native function calling. Fallbacks: OpenRouter free models (works anywhere with just an API key) or Ollama (fully local/offline) |
+| LLM | Gemini free tier (`gemini-3.5-flash`; 2.5-flash was retired for new API users) | Free, available in Lebanon (Groq is not), strong at citation-following and JSON extraction, native function calling. Pinned (not `-latest` alias) so eval numbers stay comparable. Fallbacks: OpenRouter free models (works anywhere with just an API key) or Ollama (fully local/offline) |
 | Eval | RAGAS + hand-built gold set | See "Evaluation plan" below |
 | Tracing | Langfuse Cloud free tier | See "What Langfuse is for" below |
 | Deploy | Backend → Hugging Face Spaces or Render (free); Frontend → Vercel (free) | All $0 |
@@ -71,14 +71,14 @@ This design decision is a great README/interview talking point.
 
 ## Phases
 
-### Phase 0 — Setup (~half a day)
+### Phase 0 — Setup (~half a day) ✅ DONE
 - `ai-cv-checker/` repo: `backend/` (uv or venv, FastAPI skeleton), `frontend/` (Vite React TS), `eval/`, `README.md`. Git init + GitHub repo.
 - Qdrant via Podman: `podman run -d --name qdrant -p 6333:6333 -v qdrant_storage:/qdrant/storage qdrant/qdrant` → dashboard at http://localhost:6333/dashboard
 - Accounts: Gemini API key (aistudio.google.com — free, no card needed), Langfuse Cloud project (cloud.langfuse.com) → `.env` with `GOOGLE_API_KEY`, `LANGFUSE_PUBLIC_KEY`, `LANGFUSE_SECRET_KEY`, `QDRANT_URL`. If Gemini is ever blocked, an OpenRouter key is a drop-in replacement.
 - **Test data**: 15–20 sample CVs (PDF), varied roles/seniority. Generate synthetic ones or use a public resume dataset. Fixed test set = reproducible evals.
 - **Done when:** Qdrant dashboard loads, FastAPI `/health` returns 200, keys work.
 
-### Phase 1 — Ingestion pipeline (~1 day)
+### Phase 1 — Ingestion pipeline (~1 day) ✅ DONE
 - `POST /upload`: accept PDF/DOCX → parse (PyMuPDF / docx2txt) → chunk → profile-extraction LLM call → index into Qdrant (dense BGE + sparse BM25, `enable_hybrid=True`)
 - `GET /candidates`: list extracted profiles
 - **Done when:** all sample CVs ingested; Qdrant dashboard shows chunks with correct payloads; profiles look right.
