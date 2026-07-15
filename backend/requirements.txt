@@ -12,6 +12,9 @@ docx2txt
 # LLM
 google-genai
 
+# tracing
+langfuse
+
 # RAG core
 # NOTE: llama-index-embeddings-fastembed is NOT used - it pins Python <3.13.
 # app/embeddings.py wraps fastembed directly instead.

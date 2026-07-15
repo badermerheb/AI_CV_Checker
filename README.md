@@ -58,6 +58,18 @@ job-fit ranking trade-off: comparative claims ("X fits best") are judged as weak
 grounded even when each underlying fact is cited. Per-question detail in
 [eval/results/](eval/results/).
 
+## Run with one container
+
+```bash
+podman build -t cv-checker .        # docker works identically
+podman run --rm -p 8080:8000 --env-file backend/.env \
+  -e QDRANT_URL=http://host.containers.internal:6333 cv-checker
+# open http://localhost:8080 — UI + API from a single container
+```
+
+Deploying to a public URL (Render / HF Spaces / Qdrant Cloud, all free): see
+[DEPLOY.md](DEPLOY.md).
+
 ## Run locally (dev)
 
 ```bash

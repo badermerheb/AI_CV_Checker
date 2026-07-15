@@ -65,8 +65,12 @@ export interface Stats {
   chunks_indexed: number
 }
 
+// Same-origin by default (dev proxy / single-container deploy); set VITE_API_BASE
+// at build time when the frontend is hosted separately (e.g. Vercel -> Render).
+const API_BASE: string = import.meta.env.VITE_API_BASE ?? ''
+
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
-  const response = await fetch(`/api${path}`, init)
+  const response = await fetch(`${API_BASE}/api${path}`, init)
   if (!response.ok) {
     let detail = `${response.status} ${response.statusText}`
     try {

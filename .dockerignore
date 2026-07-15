@@ -1,0 +1,12 @@
+.git
+.claude
+**/.venv
+**/node_modules
+**/__pycache__
+**/dist
+*.db
+.env
+**/.env
+data/
+eval/results/
+PLAN.md

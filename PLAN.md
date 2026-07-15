@@ -107,7 +107,7 @@ This design decision is a great README/interview talking point.
 - Add intent routing + candidate filters + job-fit aggregation (design above) → re-run eval
 - **Done when:** metrics table shows each step's impact, e.g. "hit-rate 71% → 89%". This table is the centerpiece of the README.
 
-### Phase 6 — Ship it (~1 day)
+### Phase 6 — Ship it (~1 day) 🔶 container + docs done; public deploy needs your accounts
 - `Dockerfile` for backend (build with `podman build`)
 - Prod Qdrant: Qdrant Cloud free 1GB cluster (just change `QDRANT_URL` + API key)
 - Deploy backend to HF Spaces or Render (free), frontend to Vercel; CORS + env vars

@@ -26,5 +26,8 @@ class Settings(BaseSettings):
     qdrant_url: str = "http://localhost:6333"
     qdrant_api_key: str = ""  # only needed for Qdrant Cloud
 
+    # Comma-separated origins allowed by CORS (the deployed frontend's URL in prod).
+    allowed_origins: str = "http://localhost:5173"
+
 
 settings = Settings()
