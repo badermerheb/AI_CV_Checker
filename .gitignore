@@ -9,6 +9,7 @@ __pycache__/
 
 # Local data
 *.db
+eval/results/run.log
 
 # Personal/real CVs never go in the repo (synthetic sample CVs are committed)
 data/sample_cvs/BaderMerheb_CV.pdf

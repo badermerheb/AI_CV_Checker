@@ -9,7 +9,43 @@ across all CVs. Answers come with inline citations back to the source CVs.
 ## Stack
 
 React + Vite (frontend) · FastAPI + LlamaIndex (backend) · Qdrant (hybrid vector + keyword search)
-· BGE embeddings + bge-reranker (local) · Gemini (LLM) · RAGAS (evaluation) · Langfuse (tracing)
+· BGE embeddings + cross-encoder reranker (local) · Gemini (LLM) · RAGAS (evaluation) · Langfuse (tracing)
+
+## Architecture
+
+```
+React (Vite + TS)  ──/api──►  FastAPI + LlamaIndex
+  Chat · Candidates · Upload     │
+                                 ├─ INGEST  parse (PyMuPDF) → section-aware chunking
+                                 │          → Gemini profile extraction (structured JSON)
+                                 │          → Qdrant (BGE dense + BM25 sparse)
+                                 │
+                                 ├─ CHAT    intent router (single-candidate / job-fit / general)
+                                 │          → hybrid retrieval (+ candidate filters)
+                                 │          → cross-encoder rerank
+                                 │          → per-candidate aggregation for job-fit
+                                 │          → Gemini answer with inline [n] citations
+                                 │
+                                 ├─ Langfuse traces on every request
+                                 └─ SQLite: candidate profiles + chat sessions
+Qdrant in Podman (dev) / Qdrant Cloud (prod)
+```
+
+## Evaluation results
+
+Measured on a hand-built gold set: 30 verified questions over 16 fixed sample CVs
+(details and metric rationale in [eval/README.md](eval/README.md)).
+
+| config | section-hit@5 | recall@5 | MRR |
+|---|---|---|---|
+| baseline (dense top-5) | 82.6% | 96.7% | 0.90 |
+| + hybrid (BM25 fusion) | **100%** | 96.7% | 0.95 |
+| + cross-encoder rerank | 100% | 98.3% | 0.98 |
+| + intent routing & job-fit aggregation | 100% | **100%** | 0.98 |
+
+`section-hit@5` = the chunk that actually contains the answer was retrieved (file-level
+hit-rate saturates at ~97-100% on a corpus this size). Faithfulness / relevancy (RAGAS)
+and latency per config live in [eval/results/comparison.md](eval/results/comparison.md).
 
 ## Run locally (dev)
 

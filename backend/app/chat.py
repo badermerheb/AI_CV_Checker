@@ -1,11 +1,13 @@
-"""Chat over the indexed CVs: retrieve -> prompt -> Gemini -> answer with citations.
+"""Chat over the indexed CVs: route -> retrieve -> Gemini -> answer with citations.
 
-Phase 2 baseline: dense-only top-5 retrieval, no reranking. Hybrid + reranker
-land in the retrieval-upgrades phase so the eval harness can measure the delta.
+The pipeline is configurable (dense/hybrid, rerank on/off, routing on/off) so the
+eval harness can measure each upgrade; the API serves the settings defaults.
 """
 
 import time
 import uuid
+from collections import defaultdict
+from statistics import mean
 
 from google.genai import errors as genai_errors
 from google.genai import types as genai_types
@@ -14,16 +16,20 @@ from llama_index.core.schema import MetadataMode, NodeWithScore
 from app import db, tracing, vectorstore
 from app.config import settings
 from app.llm import generate_with_retry
+from app.retrieval import rerank_nodes, retrieve
+from app.router import RouteDecision, route
 
 TOP_K = 5
 HISTORY_TURNS = 6  # messages of prior conversation included in the prompt
+JOBFIT_POOL = 50  # chunks fetched across all candidates before aggregation
+JOBFIT_SHORTLIST = 5  # candidates surfaced to the LLM
 
 SYSTEM_PROMPT = """You are an assistant for recruiters, answering questions about the \
 candidate CVs/resumes that have been uploaded.
 
 Rules:
-- Answer ONLY from the numbered CV excerpts provided in the message. Do not use outside knowledge \
-about people or companies.
+- Answer ONLY from the numbered CV excerpts (and candidate profiles, when provided) in the \
+message. Do not use outside knowledge about people or companies.
 - Cite your evidence inline with bracketed excerpt numbers, e.g. [1] or [2][3], right after the \
 claim they support. Every factual claim about a candidate needs a citation.
 - If the excerpts do not contain the answer, say plainly that the uploaded CVs don't contain that \
@@ -58,6 +64,71 @@ def _format_context(nodes: list[NodeWithScore]) -> tuple[str, list[dict]]:
     return "\n\n".join(blocks), citations
 
 
+def _jobfit_nodes(query: str, *, mode: str, rerank: bool) -> tuple[list[NodeWithScore], list[dict]]:
+    """Best-fit ranking is aggregation, not plain top-k: score candidates by their
+    best chunks against the job description, then surface a shortlist."""
+    pool = retrieve(query, mode=mode, rerank=False, top_k=JOBFIT_POOL, fetch_k=JOBFIT_POOL)
+
+    by_candidate: dict[str, list[NodeWithScore]] = defaultdict(list)
+    for node in pool:
+        by_candidate[node.node.metadata.get("candidate_id", "?")].append(node)
+
+    def candidate_score(nodes: list[NodeWithScore]) -> float:
+        scores = sorted((n.score or 0.0 for n in nodes), reverse=True)
+        return mean(scores[:3])
+
+    shortlist = sorted(by_candidate, key=lambda c: candidate_score(by_candidate[c]), reverse=True)
+    shortlist = shortlist[:JOBFIT_SHORTLIST]
+
+    nodes: list[NodeWithScore] = []
+    for cid in shortlist:
+        best = sorted(by_candidate[cid], key=lambda n: n.score or 0.0, reverse=True)[:2]
+        nodes.extend(best)
+    if rerank and len(nodes) > 2:
+        nodes = rerank_nodes(query, nodes, top_k=min(8, len(nodes)))
+
+    profiles = [p for cid in shortlist if (p := db.get_candidate(cid))]
+    return nodes, profiles
+
+
+def _profiles_block(profiles: list[dict]) -> str:
+    lines = []
+    for p in profiles:
+        prof = p["profile"]
+        lines.append(
+            f"- {p['name']} — {p['current_title']}, {p['years_experience']} yrs, "
+            f"{p['location']}. Skills: {', '.join(prof.get('skills', [])[:12])}"
+        )
+    return "\n".join(lines)
+
+
+def gather_context(
+    message: str,
+    history: list[dict],
+    *,
+    mode: str,
+    rerank: bool,
+    routing: bool,
+) -> tuple[list[NodeWithScore], list[dict], RouteDecision]:
+    """Route the question and fetch its context. Shared by chat() and the eval harness."""
+    decision = RouteDecision()
+    if routing:
+        known = [c["name"] for c in db.list_candidates()]
+        decision = route(message, history, known)
+
+    profiles: list[dict] = []
+    if decision.intent == "single_candidate":
+        nodes = retrieve(
+            message, mode=mode, rerank=rerank, top_k=TOP_K,
+            candidate_names=decision.candidate_names,
+        )
+    elif decision.intent == "job_fit":
+        nodes, profiles = _jobfit_nodes(message, mode=mode, rerank=rerank)
+    else:
+        nodes = retrieve(message, mode=mode, rerank=rerank, top_k=TOP_K)
+    return nodes, profiles, decision
+
+
 def _build_contents(history: list[dict], user_message: str) -> list[genai_types.Content]:
     contents = [
         genai_types.Content(
@@ -72,29 +143,57 @@ def _build_contents(history: list[dict], user_message: str) -> list[genai_types.
     return contents
 
 
-def chat(message: str, session_id: str | None) -> dict:
+def chat(
+    message: str,
+    session_id: str | None,
+    *,
+    mode: str | None = None,
+    rerank: bool | None = None,
+    routing: bool | None = None,
+) -> dict:
+    mode = settings.retrieval_mode if mode is None else mode
+    rerank = settings.rerank if rerank is None else rerank
+    routing = settings.routing if routing is None else routing
+
     session_id = session_id or uuid.uuid4().hex
     started = time.perf_counter()
 
-    with tracing.session(session_id), tracing.span("chat", input={"message": message}) as root:
-        with tracing.retriever("retrieval", input=message) as retrieval_span:
-            retriever = vectorstore.get_index().as_retriever(similarity_top_k=TOP_K)
-            nodes = retriever.retrieve(message)
+    with tracing.session(session_id), tracing.span(
+        "chat", input={"message": message}, metadata={"mode": mode, "rerank": rerank, "routing": routing}
+    ) as root:
+        history = db.get_history(session_id, limit=HISTORY_TURNS)
+
+        with tracing.retriever("route+retrieve", input=message) as retrieval_span:
+            nodes, profiles, decision = gather_context(
+                message, history, mode=mode, rerank=rerank, routing=routing
+            )
             if retrieval_span:
                 retrieval_span.update(
-                    output=[
-                        {
-                            "candidate": n.node.metadata.get("candidate_name"),
-                            "section": n.node.metadata.get("section"),
-                            "score": n.score,
-                        }
-                        for n in nodes
-                    ]
+                    output={
+                        "intent": decision.intent,
+                        "candidates": decision.candidate_names,
+                        "chunks": [
+                            {
+                                "candidate": n.node.metadata.get("candidate_name"),
+                                "section": n.node.metadata.get("section"),
+                                "score": n.score,
+                            }
+                            for n in nodes
+                        ],
+                    }
                 )
 
         context_block, citations = _format_context(nodes)
-        history = db.get_history(session_id, limit=HISTORY_TURNS)
-        user_message = f"CV excerpts:\n{context_block}\n\nQuestion: {message}"
+        if decision.intent == "job_fit":
+            user_message = (
+                f"Job requirement: {message}\n\n"
+                f"Candidate profiles (extracted from CVs):\n{_profiles_block(profiles)}\n\n"
+                f"CV excerpts:\n{context_block}\n\n"
+                "Rank the best-fitting candidates for this job requirement, best first, with a "
+                "short justification each. Cite excerpt numbers for every claim."
+            )
+        else:
+            user_message = f"CV excerpts:\n{context_block}\n\nQuestion: {message}"
 
         with tracing.generation(
             "answer", model=settings.gemini_model, input={"system": SYSTEM_PROMPT, "user": user_message}
@@ -127,7 +226,7 @@ def chat(message: str, session_id: str | None) -> dict:
         latency_ms = int((time.perf_counter() - started) * 1000)
         if root:
             root.set_trace_io(input=message, output=answer)
-            root.update(output={"answer": answer, "latency_ms": latency_ms})
+            root.update(output={"answer": answer, "latency_ms": latency_ms, "intent": decision.intent})
 
     tracing.flush()
     return {
@@ -135,4 +234,5 @@ def chat(message: str, session_id: str | None) -> dict:
         "answer": answer,
         "citations": citations,
         "latency_ms": latency_ms,
+        "intent": decision.intent,
     }

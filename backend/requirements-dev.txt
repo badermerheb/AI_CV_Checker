@@ -1,1 +1,7 @@
 reportlab
+
+# evaluation harness (eval/run_eval.py)
+ragas
+langchain-google-genai
+langchain-community
+pandas
