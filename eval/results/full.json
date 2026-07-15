@@ -1,0 +1,932 @@
+{
+  "config": {
+    "mode": "hybrid",
+    "rerank": true,
+    "routing": true
+  },
+  "retrieval": {
+    "summary": {
+      "hit_rate@5": 1.0,
+      "section_hit@5": 1.0,
+      "recall@5": 1.0,
+      "mrr": 0.9833,
+      "retrieval_p50_s": 2.712
+    },
+    "per_question": [
+      {
+        "id": 1,
+        "intent": "single_candidate",
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "section_hit": true,
+        "latency_s": 16.824,
+        "routed_intent": "single_candidate",
+        "retrieved": [
+          "grace_wanjiru.pdf#summary",
+          "grace_wanjiru.pdf#experience",
+          "grace_wanjiru.pdf#education",
+          "grace_wanjiru.pdf#certifications",
+          "grace_wanjiru.pdf#"
+        ]
+      },
+      {
+        "id": 2,
+        "intent": "single_candidate",
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "section_hit": true,
+        "latency_s": 17.955,
+        "routed_intent": "single_candidate",
+        "retrieved": [
+          "viktor_ivanov.pdf#certifications",
+          "viktor_ivanov.pdf#skills",
+          "viktor_ivanov.pdf#education",
+          "viktor_ivanov.pdf#experience",
+          "viktor_ivanov.pdf#"
+        ]
+      },
+      {
+        "id": 3,
+        "intent": "single_candidate",
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "section_hit": true,
+        "latency_s": 2.672,
+        "routed_intent": "single_candidate",
+        "retrieved": [
+          "sarah_chen.pdf#experience",
+          "sarah_chen.pdf#",
+          "sarah_chen.pdf#summary",
+          "sarah_chen.pdf#education",
+          "sarah_chen.pdf#skills"
+        ]
+      },
+      {
+        "id": 4,
+        "intent": "single_candidate",
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "section_hit": true,
+        "latency_s": 2.667,
+        "routed_intent": "single_candidate",
+        "retrieved": [
+          "omar_haddad.pdf#experience",
+          "omar_haddad.pdf#summary",
+          "omar_haddad.pdf#",
+          "omar_haddad.pdf#skills",
+          "omar_haddad.pdf#education"
+        ]
+      },
+      {
+        "id": 5,
+        "intent": "single_candidate",
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "section_hit": true,
+        "latency_s": 2.944,
+        "routed_intent": "single_candidate",
+        "retrieved": [
+          "fatima_al_sayed.pdf#education",
+          "fatima_al_sayed.pdf#",
+          "fatima_al_sayed.pdf#languages",
+          "fatima_al_sayed.pdf#skills",
+          "fatima_al_sayed.pdf#contact"
+        ]
+      },
+      {
+        "id": 6,
+        "intent": "single_candidate",
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "section_hit": true,
+        "latency_s": 2.628,
+        "routed_intent": "single_candidate",
+        "retrieved": [
+          "layla_nasser.pdf#languages",
+          "layla_nasser.pdf#skills",
+          "layla_nasser.pdf#",
+          "layla_nasser.pdf#summary",
+          "layla_nasser.pdf#education"
+        ]
+      },
+      {
+        "id": 7,
+        "intent": "single_candidate",
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "section_hit": true,
+        "latency_s": 2.726,
+        "routed_intent": "single_candidate",
+        "retrieved": [
+          "daniel_kim.pdf#experience",
+          "daniel_kim.pdf#",
+          "daniel_kim.pdf#education",
+          "daniel_kim.pdf#summary",
+          "daniel_kim.pdf#languages"
+        ]
+      },
+      {
+        "id": 8,
+        "intent": "single_candidate",
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "section_hit": true,
+        "latency_s": 2.678,
+        "routed_intent": "single_candidate",
+        "retrieved": [
+          "mia_johansson.pdf#experience",
+          "mia_johansson.pdf#summary",
+          "mia_johansson.pdf#",
+          "mia_johansson.pdf#skills",
+          "mia_johansson.pdf#education"
+        ]
+      },
+      {
+        "id": 9,
+        "intent": "single_candidate",
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "section_hit": true,
+        "latency_s": 2.672,
+        "routed_intent": "single_candidate",
+        "retrieved": [
+          "hassan_fares.pdf#experience",
+          "hassan_fares.pdf#summary",
+          "hassan_fares.pdf#skills",
+          "hassan_fares.pdf#",
+          "hassan_fares.pdf#languages"
+        ]
+      },
+      {
+        "id": 10,
+        "intent": "single_candidate",
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "section_hit": true,
+        "latency_s": 2.665,
+        "routed_intent": "single_candidate",
+        "retrieved": [
+          "aisha_khan.pdf#experience",
+          "aisha_khan.pdf#summary",
+          "aisha_khan.pdf#skills",
+          "aisha_khan.pdf#education",
+          "aisha_khan.pdf#"
+        ]
+      },
+      {
+        "id": 11,
+        "intent": "single_candidate",
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "section_hit": true,
+        "latency_s": 2.657,
+        "routed_intent": "single_candidate",
+        "retrieved": [
+          "nour_khalil.pdf#education",
+          "nour_khalil.pdf#summary",
+          "nour_khalil.pdf#experience",
+          "nour_khalil.pdf#",
+          "nour_khalil.pdf#languages"
+        ]
+      },
+      {
+        "id": 12,
+        "intent": "single_candidate",
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "section_hit": true,
+        "latency_s": 2.719,
+        "routed_intent": "single_candidate",
+        "retrieved": [
+          "elena_petrova.pdf#experience",
+          "elena_petrova.pdf#summary",
+          "elena_petrova.pdf#skills",
+          "elena_petrova.pdf#",
+          "elena_petrova.pdf#education"
+        ]
+      },
+      {
+        "id": 13,
+        "intent": "single_candidate",
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "section_hit": true,
+        "latency_s": 2.705,
+        "routed_intent": "single_candidate",
+        "retrieved": [
+          "james_okafor.pdf#experience",
+          "james_okafor.pdf#summary",
+          "james_okafor.pdf#skills",
+          "james_okafor.pdf#",
+          "james_okafor.pdf#education"
+        ]
+      },
+      {
+        "id": 14,
+        "intent": "single_candidate",
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "section_hit": true,
+        "latency_s": 2.583,
+        "routed_intent": "single_candidate",
+        "retrieved": [
+          "sophie_dubois.pdf#experience",
+          "sophie_dubois.pdf#",
+          "sophie_dubois.pdf#summary",
+          "sophie_dubois.pdf#skills",
+          "sophie_dubois.pdf#education"
+        ]
+      },
+      {
+        "id": 15,
+        "intent": "single_candidate",
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "section_hit": true,
+        "latency_s": 2.689,
+        "routed_intent": "single_candidate",
+        "retrieved": [
+          "tomas_garcia.pdf#experience",
+          "tomas_garcia.pdf#summary",
+          "tomas_garcia.pdf#skills",
+          "tomas_garcia.pdf#certifications",
+          "tomas_garcia.pdf#"
+        ]
+      },
+      {
+        "id": 16,
+        "intent": "single_candidate",
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "section_hit": true,
+        "latency_s": 2.656,
+        "routed_intent": "single_candidate",
+        "retrieved": [
+          "marco_rossi.pdf#experience",
+          "marco_rossi.pdf#summary",
+          "marco_rossi.pdf#",
+          "marco_rossi.pdf#skills",
+          "marco_rossi.pdf#languages"
+        ]
+      },
+      {
+        "id": 17,
+        "intent": "general",
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "section_hit": null,
+        "latency_s": 2.977,
+        "routed_intent": "general",
+        "retrieved": [
+          "nour_khalil.pdf#",
+          "layla_nasser.pdf#",
+          "layla_nasser.pdf#education",
+          "BaderMerheb_CV.pdf#",
+          "nour_khalil.pdf#education"
+        ]
+      },
+      {
+        "id": 18,
+        "intent": "general",
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "section_hit": true,
+        "latency_s": 48.137,
+        "routed_intent": "general",
+        "retrieved": [
+          "james_okafor.pdf#summary",
+          "james_okafor.pdf#skills",
+          "james_okafor.pdf#experience",
+          "grace_wanjiru.pdf#skills",
+          "james_okafor.pdf#certifications"
+        ]
+      },
+      {
+        "id": 19,
+        "intent": "general",
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "section_hit": true,
+        "latency_s": 2.933,
+        "routed_intent": "general",
+        "retrieved": [
+          "aisha_khan.pdf#experience",
+          "aisha_khan.pdf#skills",
+          "sarah_chen.pdf#skills",
+          "james_okafor.pdf#certifications",
+          "BaderMerheb_CV.pdf#projects"
+        ]
+      },
+      {
+        "id": 20,
+        "intent": "general",
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "section_hit": true,
+        "latency_s": 2.92,
+        "routed_intent": "general",
+        "retrieved": [
+          "fatima_al_sayed.pdf#experience",
+          "BaderMerheb_CV.pdf#experience",
+          "fatima_al_sayed.pdf#skills",
+          "fatima_al_sayed.pdf#summary",
+          "omar_haddad.pdf#experience"
+        ]
+      },
+      {
+        "id": 21,
+        "intent": "general",
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "section_hit": true,
+        "latency_s": 2.904,
+        "routed_intent": "general",
+        "retrieved": [
+          "sophie_dubois.pdf#languages",
+          "nour_khalil.pdf#languages",
+          "sarah_chen.pdf#languages",
+          "layla_nasser.pdf#languages",
+          "james_okafor.pdf#languages"
+        ]
+      },
+      {
+        "id": 22,
+        "intent": "general",
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "section_hit": true,
+        "latency_s": 2.885,
+        "routed_intent": "general",
+        "retrieved": [
+          "james_okafor.pdf#experience",
+          "viktor_ivanov.pdf#experience",
+          "daniel_kim.pdf#experience",
+          "sarah_chen.pdf#experience",
+          "omar_haddad.pdf#experience"
+        ]
+      },
+      {
+        "id": 23,
+        "intent": "general",
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "section_hit": true,
+        "latency_s": 2.932,
+        "routed_intent": "general",
+        "retrieved": [
+          "daniel_kim.pdf#summary",
+          "daniel_kim.pdf#experience",
+          "sophie_dubois.pdf#experience",
+          "BaderMerheb_CV.pdf#projects",
+          "daniel_kim.pdf#skills"
+        ]
+      },
+      {
+        "id": 24,
+        "intent": "general",
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "section_hit": true,
+        "latency_s": 2.653,
+        "routed_intent": "general",
+        "retrieved": [
+          "sarah_chen.pdf#summary",
+          "sarah_chen.pdf#experience",
+          "grace_wanjiru.pdf#summary",
+          "grace_wanjiru.pdf#experience",
+          "layla_nasser.pdf#experience"
+        ]
+      },
+      {
+        "id": 25,
+        "intent": "job_fit",
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "section_hit": null,
+        "latency_s": 2.612,
+        "routed_intent": "job_fit",
+        "retrieved": [
+          "james_okafor.pdf#summary",
+          "james_okafor.pdf#experience",
+          "grace_wanjiru.pdf#skills",
+          "grace_wanjiru.pdf#experience",
+          "sarah_chen.pdf#experience",
+          "aisha_khan.pdf#experience",
+          "viktor_ivanov.pdf#experience",
+          "aisha_khan.pdf#skills"
+        ]
+      },
+      {
+        "id": 26,
+        "intent": "job_fit",
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "section_hit": null,
+        "latency_s": 2.696,
+        "routed_intent": "job_fit",
+        "retrieved": [
+          "fatima_al_sayed.pdf#experience",
+          "fatima_al_sayed.pdf#summary",
+          "BaderMerheb_CV.pdf#projects",
+          "BaderMerheb_CV.pdf#experience",
+          "tomas_garcia.pdf#summary",
+          "grace_wanjiru.pdf#skills",
+          "omar_haddad.pdf#skills",
+          "tomas_garcia.pdf#skills"
+        ]
+      },
+      {
+        "id": 27,
+        "intent": "job_fit",
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "section_hit": null,
+        "latency_s": 2.793,
+        "routed_intent": "job_fit",
+        "retrieved": [
+          "hassan_fares.pdf#summary",
+          "sarah_chen.pdf#experience",
+          "hassan_fares.pdf#experience",
+          "elena_petrova.pdf#experience",
+          "sarah_chen.pdf#summary",
+          "elena_petrova.pdf#summary",
+          "BaderMerheb_CV.pdf#projects",
+          "BaderMerheb_CV.pdf#experience"
+        ]
+      },
+      {
+        "id": 28,
+        "intent": "job_fit",
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "section_hit": null,
+        "latency_s": 2.695,
+        "routed_intent": "job_fit",
+        "retrieved": [
+          "aisha_khan.pdf#experience",
+          "aisha_khan.pdf#skills",
+          "sarah_chen.pdf#experience",
+          "hassan_fares.pdf#summary",
+          "james_okafor.pdf#experience",
+          "layla_nasser.pdf#summary",
+          "james_okafor.pdf#skills",
+          "layla_nasser.pdf#skills"
+        ]
+      },
+      {
+        "id": 29,
+        "intent": "job_fit",
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "section_hit": null,
+        "latency_s": 2.788,
+        "routed_intent": "job_fit",
+        "retrieved": [
+          "elena_petrova.pdf#summary",
+          "elena_petrova.pdf#experience",
+          "sarah_chen.pdf#summary",
+          "BaderMerheb_CV.pdf#projects",
+          "marco_rossi.pdf#skills",
+          "marco_rossi.pdf#summary",
+          "sarah_chen.pdf#experience",
+          "nour_khalil.pdf#summary"
+        ]
+      },
+      {
+        "id": 30,
+        "intent": "job_fit",
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.5,
+        "section_hit": null,
+        "latency_s": 2.718,
+        "routed_intent": "job_fit",
+        "retrieved": [
+          "sarah_chen.pdf#summary",
+          "nour_khalil.pdf#summary",
+          "sarah_chen.pdf#skills",
+          "fatima_al_sayed.pdf#skills",
+          "nour_khalil.pdf#skills",
+          "tomas_garcia.pdf#skills",
+          "layla_nasser.pdf#skills"
+        ]
+      }
+    ]
+  },
+  "generation": {
+    "ragas": {
+      "faithfulness": 0.8919,
+      "answer_relevancy": 0.8857
+    },
+    "latency_ms_p50": 3470,
+    "latency_ms_p95": 18415,
+    "samples": [
+      {
+        "user_input": "How many years of experience does Grace Wanjiru have and what is her current role?",
+        "response": "Grace Wanjiru has 13 years of experience [1]. Her current role is Principal Cloud Architect at Zindua [2].",
+        "retrieved_contexts": [
+          "Grace Wanjiru \u2014 summary: Summary\nCloud architect with 13 years from systems engineering to principal-level architecture. Designs\nmulti-cloud platforms, leads large migrations, and keeps the bill under control.",
+          "Grace Wanjiru \u2014 experience: Experience\nPrincipal Cloud Architect \u2014 Zindua   (Oct 2021 \u2013 Present)\n\u2022 Architected the multi-cloud platform (AWS + GCP) for a pan-African fintech.\n\u2022 Led a 30-person cloud migration program, completed 2 months early.\n\u2022 Cut annual cloud spend 35% via rightsizing and savings plans.\nCloud Engineer \u2014 CloudPath   (Mar 2017 \u2013 Sep 2021)\n\u2022 Executed 12 datacenter-to-AWS migrations for enterprise clients.\n\u2022 Standardized infrastructure-as-code with Terraform across all projects.\nSystems Engineer \u2014 TelcoOne   (Jan 2013 \u2013 Feb 2017)\n\u2022 Ran core Linux/VMware infrastructure for a national telco.",
+          "Grace Wanjiru \u2014 education: Education\nBSc Information Technology, University of Nairobi (2012)",
+          "Grace Wanjiru \u2014 certifications: Certifications\n\u2022 AWS Solutions Architect - Professional\n\u2022 GCP Professional Cloud Architect",
+          "Grace Wanjiru \u2014 CV: Grace Wanjiru\nPrincipal Cloud Architect \u2014 Nairobi, Kenya\ngrace.wanjiru@example.com | +254 722 234 567"
+        ],
+        "reference": "Grace Wanjiru has 13 years of experience and is currently Principal Cloud Architect at Zindua."
+      },
+      {
+        "user_input": "What certifications does Viktor Ivanov hold?",
+        "response": "Viktor Ivanov holds the following certifications:\n\n* OSCP [1]\n* CompTIA Security+ [1]",
+        "retrieved_contexts": [
+          "Viktor Ivanov \u2014 certifications: Certifications\n\u2022 OSCP\n\u2022 CompTIA Security+",
+          "Viktor Ivanov \u2014 skills: Skills\npenetration testing, Burp Suite, Splunk, Python, network security, AWS security, OWASP, incident\nresponse",
+          "Viktor Ivanov \u2014 education: Education\nBSc Informatics, Sofia University (2018)",
+          "Viktor Ivanov \u2014 experience: Experience\nSecurity Engineer \u2014 BlueShield   (May 2021 \u2013 Present)\n\u2022 Perform web application penetration tests for enterprise clients (OWASP methodology).\n\u2022 Led AWS security reviews; found and remediated 3 critical misconfigurations.\n\u2022 Incident responder for ransomware and phishing cases.\nSOC Analyst \u2014 SecOps Ltd   (Jun 2018 \u2013 Apr 2021)\n\u2022 Triaged alerts in Splunk SIEM for 30+ enterprise customers.\n\u2022 Wrote Python automations reducing false-positive triage time by half.",
+          "Viktor Ivanov \u2014 CV: Viktor Ivanov\nSecurity Engineer \u2014 Sofia, Bulgaria\nviktor.ivanov@example.com | +359 88 123 4567"
+        ],
+        "reference": "Viktor Ivanov holds the OSCP and CompTIA Security+ certifications."
+      },
+      {
+        "user_input": "Where did Sarah Chen work before TechFlow?",
+        "response": "Before working at TechFlow, Sarah Chen worked at DataCorp from March 2019 to June 2022 [1].",
+        "retrieved_contexts": [
+          "Sarah Chen \u2014 experience: Experience\nSenior Backend Engineer \u2014 CloudMed   (Jan 2025 \u2013 Present)\n\u2022 Own the patient-records API (FastAPI, PostgreSQL) serving 2M requests/day.\n\u2022 Introduced async task pipeline with Celery and Redis, cutting report latency by 60%.\nSenior Backend Engineer \u2014 TechFlow   (Jul 2022 \u2013 Dec 2024)\n\u2022 Broke a Django monolith into 6 microservices communicating over Kafka.\n\u2022 Led a team of 4 engineers; established code review and CI standards.\n\u2022 Reduced p95 API latency from 800ms to 220ms through query optimization.\nBackend Engineer \u2014 DataCorp   (Mar 2019 \u2013 Jun 2022)\n\u2022 Built Django REST APIs for a B2B analytics product.\n\u2022 Designed the PostgreSQL schema powering customer-facing dashboards.",
+          "Sarah Chen \u2014 CV: Sarah Chen\nSenior Backend Engineer \u2014 Beirut, Lebanon\nsarah.chen@example.com | +961 70 123 456",
+          "Sarah Chen \u2014 summary: Summary\nBackend engineer with 7+ years building Python services at scale. Strong in API design, relational data\nmodeling, and event-driven architectures. Led small teams and owns systems end-to-end, from design\nto on-call.",
+          "Sarah Chen \u2014 education: Education\nBSc Computer Science, American University of Beirut (2018)",
+          "Sarah Chen \u2014 skills: Skills\nPython, Django, FastAPI, PostgreSQL, Redis, Kafka, Celery, Docker, AWS, CI/CD"
+        ],
+        "reference": "Before TechFlow, Sarah Chen worked at DataCorp as a Backend Engineer from March 2019 to June 2022."
+      },
+      {
+        "user_input": "What did Omar Haddad build at RoadTech?",
+        "response": "At RoadTech, Omar Haddad built the ride-recommendation system using PyTorch, which resulted in a 12% increase in conversion [1]. Additionally, he set up the feature store and MLflow-based experiment tracking for the team [1].",
+        "retrieved_contexts": [
+          "Omar Haddad \u2014 experience: Experience\nSenior ML Engineer \u2014 RoadTech   (Sep 2023 \u2013 Present)\n\u2022 Built the ride-recommendation system (PyTorch) lifting conversion by 12%.\n\u2022 Set up the feature store and MLflow-based experiment tracking for the ML team.\nML Engineer \u2014 SightAI   (Feb 2021 \u2013 Aug 2023)\n\u2022 Trained and deployed object-detection models for retail shelf monitoring.\n\u2022 Deployed models to AWS SageMaker with automated retraining pipelines.",
+          "Omar Haddad \u2014 summary: Summary\nML engineer focused on taking models from notebook to production. Experience across computer\nvision and recommender systems, with solid MLOps practices.",
+          "Omar Haddad \u2014 CV: Omar Haddad\nMachine Learning Engineer \u2014 Dubai, UAE\nomar.haddad@example.com | +971 50 234 567",
+          "Omar Haddad \u2014 skills: Skills\nPython, PyTorch, scikit-learn, MLflow, SageMaker, Docker, Airflow, SQL, computer vision,\nrecommender systems",
+          "Omar Haddad \u2014 education: Education\nMSc Data Science, University of Jordan (2020)\nBSc Computer Science, University of Jordan (2018)"
+        ],
+        "reference": "At RoadTech, Omar Haddad built the ride-recommendation system in PyTorch, lifting conversion by 12%, and set up the feature store and MLflow-based experiment tracking."
+      },
+      {
+        "user_input": "Which university did Fatima Al-Sayed attend and what did she study?",
+        "response": "Fatima Al-Sayed attended the University of Jordan, where she earned a BSc in Computer Science [1].",
+        "retrieved_contexts": [
+          "Fatima Al-Sayed \u2014 education: Education\nBSc Computer Science, University of Jordan (2020)",
+          "Fatima Al-Sayed \u2014 CV: Fatima Al-Sayed\nAI Engineer",
+          "Fatima Al-Sayed \u2014 languages: Languages\n\u2022 Arabic (native)\n\u2022 English (fluent)",
+          "Fatima Al-Sayed \u2014 skills: Skills\n\u2022 Python\n\u2022 LangChain\n\u2022 LlamaIndex\n\u2022 RAG\n\u2022 Qdrant\n\u2022 pgvector\n\u2022 Hugging Face\nTransformers\n\u2022 FastAPI\n\u2022 prompt engineering\n\u2022 RAGAS\n\u2022 spaCy",
+          "Fatima Al-Sayed \u2014 contact: Contact\nfatima.alsayed@example.c\nom\n+962 79 890 1234\nAmman, Jordan"
+        ],
+        "reference": "Fatima Al-Sayed studied Computer Science (BSc) at the University of Jordan, graduating in 2020."
+      },
+      {
+        "user_input": "What languages does Layla Nasser speak?",
+        "response": "Layla Nasser speaks Arabic (native), French (fluent), and English (fluent) [1].",
+        "retrieved_contexts": [
+          "Layla Nasser \u2014 languages: Languages\nArabic (native) \u00b7 French (fluent) \u00b7 English (fluent)",
+          "Layla Nasser \u2014 skills: Skills\nPython, pandas, scikit-learn, SQL, Tableau, Power BI, A/B testing, statistics, data storytelling",
+          "Layla Nasser \u2014 CV: Layla Nasser\nData Scientist \u2014 Beirut, Lebanon\nlayla.nasser@example.com | +961 71 456 789",
+          "Layla Nasser \u2014 summary: Summary\nData scientist blending statistical rigor with business sense. Builds churn and propensity models,\ndesigns A/B tests, and communicates results to non-technical stakeholders.",
+          "Layla Nasser \u2014 education: Education\nMSc Statistics, Saint Joseph University of Beirut (2019)"
+        ],
+        "reference": "Layla Nasser speaks Arabic (native), French (fluent), and English (fluent)."
+      },
+      {
+        "user_input": "How much did Daniel Kim reduce the crash rate at AppNova?",
+        "response": "Daniel Kim reduced the crash rate at AppNova from 2.1% to 0.3% [1].",
+        "retrieved_contexts": [
+          "Daniel Kim \u2014 experience: Experience\nMobile Engineer \u2014 Whistle   (Jul 2022 \u2013 Present)\n\u2022 Lead Flutter development for a messaging app with 500k MAU.\n\u2022 Set up mobile CI/CD with Fastlane; release cycle went from monthly to weekly.\nAndroid Developer \u2014 AppNova   (Mar 2019 \u2013 Jun 2022)\n\u2022 Built Kotlin apps totalling 1M+ downloads on Google Play.\n\u2022 Reduced crash rate from 2.1% to 0.3% through systematic instrumentation.",
+          "Daniel Kim \u2014 CV: Daniel Kim\nMobile Developer \u2014 Seoul, South Korea\ndaniel.kim@example.com | +82 10 789 0123",
+          "Daniel Kim \u2014 education: Education\nBSc Computer Science, Hanyang University (2018)",
+          "Daniel Kim \u2014 summary: Summary\nMobile developer shipping consumer apps since 2019. Native Android background, now leading\ncross-platform Flutter development.",
+          "Daniel Kim \u2014 languages: Languages\nKorean (native) \u00b7 English (professional)"
+        ],
+        "reference": "Daniel Kim reduced the crash rate from 2.1% to 0.3% at AppNova through systematic instrumentation."
+      },
+      {
+        "user_input": "How many product teams use the design system Mia Johansson owns?",
+        "response": "Mia Johansson owns the design system used across 4 product teams [1].",
+        "retrieved_contexts": [
+          "Mia Johansson \u2014 experience: Experience\nProduct Designer \u2014 Klippa   (Aug 2022 \u2013 Present)\n\u2022 Own the design system used across 4 product teams.\n\u2022 Ran 30+ usability sessions informing the app redesign that lifted retention 8%.\nUI Designer \u2014 Designly   (May 2019 \u2013 Jul 2022)\n\u2022 Designed marketing sites and app UIs for 20+ agency clients.",
+          "Mia Johansson \u2014 summary: Summary\nProduct designer covering research through polished UI. Builds design systems, runs usability studies,\nand partners closely with engineers.",
+          "Mia Johansson \u2014 CV: Mia Johansson\nProduct Designer \u2014 Stockholm, Sweden\nmia.johansson@example.com | +46 70 456 7890",
+          "Mia Johansson \u2014 skills: Skills\nFigma, user research, prototyping, design systems, accessibility, usability testing, HTML/CSS (basic)",
+          "Mia Johansson \u2014 education: Education\nBA Interaction Design, Umea Institute of Design (2018)"
+        ],
+        "reference": "The design system Mia Johansson owns at Klippa is used across 4 product teams."
+      },
+      {
+        "user_input": "What transaction throughput do Hassan Fares's payment services handle?",
+        "response": "Hassan Fares's payment-processing services handle 3,000 transactions per second [1].",
+        "retrieved_contexts": [
+          "Hassan Fares \u2014 experience: Experience\nBackend Engineer \u2014 Paylink   (Jun 2023 \u2013 Present)\n\u2022 Build payment-processing services in Go handling 3k transactions/second.\n\u2022 Designed the idempotency layer eliminating duplicate-charge incidents.\nBackend Developer \u2014 StreamCast   (Jan 2020 \u2013 May 2023)\n\u2022 Built Go microservices (gRPC) for a music-streaming platform.\n\u2022 Implemented playlist sync used by 800k daily listeners.",
+          "Hassan Fares \u2014 summary: Summary\nBackend engineer working in Go on high-throughput systems. Payments and streaming background;\nobsessive about latency budgets and clean interfaces.",
+          "Hassan Fares \u2014 skills: Skills\nGo, gRPC, PostgreSQL, Redis, Docker, Kubernetes, RabbitMQ, microservices",
+          "Hassan Fares \u2014 CV: Hassan Fares\nBackend Engineer (Go) \u2014 Beirut, Lebanon (remote)\nhassan.fares@example.com | +961 3 345 678",
+          "Hassan Fares \u2014 languages: Languages\nArabic (native) \u00b7 English (fluent)"
+        ],
+        "reference": "Hassan Fares builds payment-processing services in Go at Paylink that handle 3,000 transactions per second."
+      },
+      {
+        "user_input": "What does Aisha Khan own at Finlytics?",
+        "response": "At Finlytics, Aisha Khan owns the dbt/Snowflake warehouse, which consists of over 300 models and powers the company's analytics [1].",
+        "retrieved_contexts": [
+          "Aisha Khan \u2014 experience: Experience\nSenior Data Engineer \u2014 Finlytics   (Mar 2024 \u2013 Present)\n\u2022 Own the dbt/Snowflake warehouse (300+ models) powering company analytics.\n\u2022 Built Kafka streaming ingestion handling 50k events/second.\nData Engineer \u2014 NorthStar Analytics   (Apr 2021 \u2013 Feb 2024)\n\u2022 Orchestrated 80+ Airflow DAGs feeding a Redshift warehouse.\n\u2022 Rebuilt the core Spark ETL, cutting nightly batch time from 6h to 90min.\nETL Developer \u2014 DataBridge   (Jun 2019 \u2013 Mar 2021)\n\u2022 Migrated legacy SSIS packages to Python-based ETL.",
+          "Aisha Khan \u2014 summary: Summary\nData engineer who builds pipelines that don't wake anyone at 3am. Seven years across ETL,\nwarehousing, and streaming; strong dbt and Airflow practitioner.",
+          "Aisha Khan \u2014 skills: Skills\nPython, SQL, Apache Spark, Airflow, dbt, Kafka, Snowflake, Redshift, AWS, data modeling",
+          "Aisha Khan \u2014 education: Education\nBSc Computer Science, NED University, Karachi (2019)",
+          "Aisha Khan \u2014 CV: Aisha Khan\nSenior Data Engineer \u2014 Karachi, Pakistan (remote)\naisha.khan@example.com | +92 300 678 9012"
+        ],
+        "reference": "At Finlytics, Aisha Khan owns the dbt/Snowflake warehouse with over 300 models and built Kafka streaming ingestion handling 50,000 events per second."
+      },
+      {
+        "user_input": "When did Nour Khalil graduate and from which university?",
+        "response": "Nour Khalil graduated in 2024 from the Lebanese University [1].",
+        "retrieved_contexts": [
+          "Nour Khalil \u2014 education: Education\nBSc Computer Science, Lebanese University (2024)",
+          "Nour Khalil \u2014 summary: Summary\nRecent computer science graduate with internship and one year of professional experience.\nComfortable in Python and Java; eager to grow into backend development.",
+          "Nour Khalil \u2014 experience: Experience\nJunior Software Engineer \u2014 LebTech Labs   (Feb 2025 \u2013 Present)\n\u2022 Develop and maintain REST APIs in Python (Flask) for client projects.\n\u2022 Wrote data-cleaning scripts that automated a weekly manual process.\nSoftware Engineering Intern \u2014 CedarSoft   (Jun 2024 \u2013 Sep 2024)\n\u2022 Fixed bugs and wrote unit tests for a Java Spring Boot application.",
+          "Nour Khalil \u2014 CV: Nour Khalil\nJunior Software Engineer \u2014 Tripoli, Lebanon\nnour.khalil@example.com | +961 76 012 345",
+          "Nour Khalil \u2014 languages: Languages\nArabic (native) \u00b7 English (fluent) \u00b7 French (fluent)"
+        ],
+        "reference": "Nour Khalil graduated in 2024 with a BSc in Computer Science from the Lebanese University."
+      },
+      {
+        "user_input": "What did Elena Petrova do at PixelWorks?",
+        "response": "At PixelWorks, Elena Petrova performed the following tasks:\n\n*   Built and maintained the company design system using React, TypeScript, and Storybook [1].\n*   Migrated a legacy jQuery application to React with zero downtime [1].",
+        "retrieved_contexts": [
+          "Elena Petrova \u2014 experience: Experience\nSenior Frontend Engineer \u2014 ShopHive   (Apr 2023 \u2013 Present)\n\u2022 Lead frontend for the checkout flow (Next.js), improving Core Web Vitals to green across the board.\n\u2022 Drove the accessibility program to WCAG 2.1 AA compliance.\nFrontend Developer \u2014 PixelWorks   (Jun 2020 \u2013 Mar 2023)\n\u2022 Built and maintained the company design system (React, TypeScript, Storybook).\n\u2022 Migrated a legacy jQuery app to React with zero downtime.",
+          "Elena Petrova \u2014 summary: Summary\nFrontend engineer specializing in React and TypeScript. Cares deeply about performance,\naccessibility, and design systems that scale across teams.",
+          "Elena Petrova \u2014 skills: Skills\nReact, TypeScript, Next.js, Redux, Tailwind CSS, Jest, Cypress, Vite, Storybook, accessibility",
+          "Elena Petrova \u2014 CV: Elena Petrova\nSenior Frontend Engineer \u2014 Berlin, Germany\nelena.petrova@example.com | +49 152 345 6789",
+          "Elena Petrova \u2014 education: Education\nBSc Software Engineering, Technical University of Berlin (2019)"
+        ],
+        "reference": "At PixelWorks, Elena Petrova built and maintained the company design system in React, TypeScript and Storybook, and migrated a legacy jQuery app to React with zero downtime."
+      },
+      {
+        "user_input": "What SLO work has James Okafor done?",
+        "response": "James Okafor has defined SLOs and error budgets for 12 services during his current role as a Senior SRE at Stackway [1].",
+        "retrieved_contexts": [
+          "James Okafor \u2014 experience: Experience\nPeriod\nCompany / Role\nHighlights\nMay 2023 \u2013\nPresent\nStackway\nSenior SRE\n\u2022 Defined SLOs and error budgets for 12 services; on-call\nincident commander.\n\u2022 Built the Prometheus/Grafana observability stack used by\n40 engineers.\nFeb 2019 \u2013 Apr\n2023\nFinEdge\nDevOps Engineer\n\u2022 Migrated workloads to Kubernetes (EKS) managed entirely\nwith Terraform.\n\u2022 Cut deployment time from 45 minutes to 6 via GitHub\nActions pipelines.\nJan 2017 \u2013 Jan\n2019\nCloudNine Hosting\nSystems Administrator\n\u2022 Managed 200+ Linux servers; wrote Ansible playbooks\nreplacing manual runbooks.",
+          "James Okafor \u2014 summary: Summary\nDevOps/SRE with 9 years across sysadmin, platform engineering, and reliability. Runs Kubernetes in\nproduction, automates everything with Terraform, and builds observability people actually use.",
+          "James Okafor \u2014 skills: Skills\nKubernetes, Terraform, AWS, GCP, Ansible, Prometheus, Grafana, Bash, Python, GitHub Actions",
+          "James Okafor \u2014 CV: James Okafor\nSenior Site Reliability Engineer \u2014 Lagos, Nigeria (remote)\njames.okafor@example.com | +234 803 456 7890",
+          "James Okafor \u2014 education: Education\nBSc Computer Engineering, University of Lagos (2016)"
+        ],
+        "reference": "At Stackway, James Okafor defined SLOs and error budgets for 12 services and serves as on-call incident commander."
+      },
+      {
+        "user_input": "How many user interviews does Sophie Dubois run per quarter?",
+        "response": "Sophie Dubois runs 40+ user interviews per quarter [1].",
+        "retrieved_contexts": [
+          "Sophie Dubois \u2014 experience: Experience\nSenior Product Manager \u2014 Sensei   (Jun 2023 \u2013 Present)\n\u2022 Own the roadmap for ML-powered document processing (OCR + extraction).\n\u2022 Shipped 3 major features that grew ARR by 25%.\nProduct Manager \u2014 Movado   (Sep 2019 \u2013 May 2023)\n\u2022 Led payments and checkout products for a marketplace with 2M users.\n\u2022 Ran continuous discovery; 40+ user interviews per quarter.\nBusiness Analyst \u2014 Yello   (Sep 2017 \u2013 Aug 2019)\n\u2022 Analyzed funnel data (SQL) and defined KPIs for the product org.",
+          "Sophie Dubois \u2014 CV: Sophie Dubois\nSenior Product Manager \u2014 Paris, France\nsophie.dubois@example.com | +33 6 12 34 56 78",
+          "Sophie Dubois \u2014 summary: Summary\nProduct manager for technical products, most recently ML-powered features. Strong on discovery,\nruthless prioritization, and working hand-in-hand with engineering.",
+          "Sophie Dubois \u2014 skills: Skills\nproduct discovery, roadmapping, SQL, agile/Scrum, Jira, A/B testing, stakeholder management, Figma\n(basic)",
+          "Sophie Dubois \u2014 education: Education\nMSc Management, HEC Paris (2017)"
+        ],
+        "reference": "Sophie Dubois ran continuous discovery with 40+ user interviews per quarter at Movado."
+      },
+      {
+        "user_input": "What test suites does Tomas Garcia own at GreenCart?",
+        "response": "At GreenCart, Tomas Garcia owns the Cypress and Playwright test suites, which gate every deployment and consist of over 900 tests with a flake rate of less than 1% [1].",
+        "retrieved_contexts": [
+          "Tomas Garcia \u2014 experience: Experience\nSenior QA Automation Engineer \u2014 GreenCart   (Aug 2023 \u2013 Present)\n\u2022 Own the Cypress + Playwright suites gating every deploy (900+ tests, <1% flake rate).\n\u2022 Introduced contract testing for 14 internal APIs.\nQA Automation Engineer \u2014 PagoSur   (Apr 2020 \u2013 Jul 2023)\n\u2022 Built the Selenium-based regression suite for a payments platform.\n\u2022 Automated API testing with Postman/Newman in CI.\nManual Tester \u2014 SoftQA   (Mar 2018 \u2013 Mar 2020)\n\u2022 Executed test plans for web and mobile clients.",
+          "Tomas Garcia \u2014 summary: Summary\nQA engineer who moved from manual testing to full automation ownership. Builds test frameworks,\nwires them into CI, and treats flaky tests as bugs.",
+          "Tomas Garcia \u2014 skills: Skills\nCypress, Playwright, Selenium, Python, JavaScript, Postman, JMeter, CI/CD, contract testing",
+          "Tomas Garcia \u2014 certifications: Certifications\n\u2022 ISTQB Foundation",
+          "Tomas Garcia \u2014 CV: Tomas Garcia\nSenior QA Automation Engineer \u2014 Buenos Aires, Argentina (remote)\ntomas.garcia@example.com | +54 911 901 2345"
+        ],
+        "reference": "Tomas Garcia owns the Cypress and Playwright suites at GreenCart, with over 900 tests gating every deploy at under 1% flake rate."
+      },
+      {
+        "user_input": "What did Marco Rossi introduce at Lumina?",
+        "response": "At Lumina, Marco Rossi introduced end-to-end testing using Playwright, which resulted in catching over 30 regressions before release [1].",
+        "retrieved_contexts": [
+          "Marco Rossi \u2014 experience: Experience\nSenior Full-Stack Developer \u2014 Lumina   (Feb 2024 \u2013 Present)\n\u2022 Built the invoicing module end-to-end (NestJS, React, PostgreSQL).\n\u2022 Introduced end-to-end testing with Playwright, catching 30+ regressions pre-release.\nFull-Stack Developer \u2014 Trenta   (May 2021 \u2013 Jan 2024)\n\u2022 Developed customer-facing features on a Node.js/React/MongoDB stack.\n\u2022 Improved API response times 3x by adding Redis caching.\nWeb Developer \u2014 Freelance   (Jun 2018 \u2013 Apr 2021)\n\u2022 Delivered 15+ web applications for small businesses across Italy.",
+          "Marco Rossi \u2014 summary: Summary\nFull-stack developer comfortable across the whole product: Node.js and NestJS on the back, React on\nthe front, PostgreSQL underneath, AWS around it all.",
+          "Marco Rossi \u2014 CV: Marco Rossi\nSenior Full-Stack Developer \u2014 Milan, Italy\nmarco.rossi@example.com | +39 340 567 8901",
+          "Marco Rossi \u2014 skills: Skills\nJavaScript, TypeScript, Node.js, NestJS, React, MongoDB, PostgreSQL, Redis, Docker, AWS",
+          "Marco Rossi \u2014 languages: Languages\nItalian (native) \u00b7 English (fluent) \u00b7 Spanish (conversational)"
+        ],
+        "reference": "At Lumina, Marco Rossi built the invoicing module end-to-end (NestJS, React, PostgreSQL) and introduced end-to-end testing with Playwright, catching over 30 regressions before release."
+      },
+      {
+        "user_input": "Which candidate is based in Tripoli, Lebanon?",
+        "response": "Nour Khalil is based in Tripoli, Lebanon [1].",
+        "retrieved_contexts": [
+          "Nour Khalil \u2014 CV: Nour Khalil\nJunior Software Engineer \u2014 Tripoli, Lebanon\nnour.khalil@example.com | +961 76 012 345",
+          "Layla Nasser \u2014 CV: Layla Nasser\nData Scientist \u2014 Beirut, Lebanon\nlayla.nasser@example.com | +961 71 456 789",
+          "Layla Nasser \u2014 education: Education\nMSc Statistics, Saint Joseph University of Beirut (2019)",
+          "Bader Merheb \u2014 CV: Bader Merheb\nKesserwan, Lebanon |badermerheb1@gmail.com| Lebanese | Mobile: +961 71 724 555 | GitHub | LinkedIn",
+          "Nour Khalil \u2014 education: Education\nBSc Computer Science, Lebanese University (2024)"
+        ],
+        "reference": "Nour Khalil is based in Tripoli, Lebanon."
+      },
+      {
+        "user_input": "Who knows both Kubernetes and Terraform?",
+        "response": "Based on the provided documents, both candidates possess skills in Kubernetes and Terraform:\n\n*   **James Okafor:** His skills list includes both Kubernetes and Terraform [2]. He has professional experience migrating workloads to Kubernetes using Terraform [3].\n*   **Grace Wanjiru:** Her skills list includes both Terraform and Kubernetes [4].",
+        "retrieved_contexts": [
+          "James Okafor \u2014 summary: Summary\nDevOps/SRE with 9 years across sysadmin, platform engineering, and reliability. Runs Kubernetes in\nproduction, automates everything with Terraform, and builds observability people actually use.",
+          "James Okafor \u2014 skills: Skills\nKubernetes, Terraform, AWS, GCP, Ansible, Prometheus, Grafana, Bash, Python, GitHub Actions",
+          "James Okafor \u2014 experience: Experience\nPeriod\nCompany / Role\nHighlights\nMay 2023 \u2013\nPresent\nStackway\nSenior SRE\n\u2022 Defined SLOs and error budgets for 12 services; on-call\nincident commander.\n\u2022 Built the Prometheus/Grafana observability stack used by\n40 engineers.\nFeb 2019 \u2013 Apr\n2023\nFinEdge\nDevOps Engineer\n\u2022 Migrated workloads to Kubernetes (EKS) managed entirely\nwith Terraform.\n\u2022 Cut deployment time from 45 minutes to 6 via GitHub\nActions pipelines.\nJan 2017 \u2013 Jan\n2019\nCloudNine Hosting\nSystems Administrator\n\u2022 Managed 200+ Linux servers; wrote Ansible playbooks\nreplacing manual runbooks.",
+          "Grace Wanjiru \u2014 skills: Skills\nAWS, GCP, Azure, Terraform, Kubernetes, networking, serverless, cost optimization, architecture\nreviews",
+          "James Okafor \u2014 certifications: Certifications\n\u2022 CKA (Certified Kubernetes Administrator)\n\u2022 AWS SysOps Administrator"
+        ],
+        "reference": "James Okafor and Grace Wanjiru both list Kubernetes and Terraform among their skills."
+      },
+      {
+        "user_input": "Which candidates have worked with Kafka?",
+        "response": "The following candidates have experience with Kafka:\n\n*   **Aisha Khan**: She has experience building Kafka streaming ingestion [1] and lists Kafka as a skill [2].\n*   **Sarah Chen**: She lists Kafka as a skill [3].",
+        "retrieved_contexts": [
+          "Aisha Khan \u2014 experience: Experience\nSenior Data Engineer \u2014 Finlytics   (Mar 2024 \u2013 Present)\n\u2022 Own the dbt/Snowflake warehouse (300+ models) powering company analytics.\n\u2022 Built Kafka streaming ingestion handling 50k events/second.\nData Engineer \u2014 NorthStar Analytics   (Apr 2021 \u2013 Feb 2024)\n\u2022 Orchestrated 80+ Airflow DAGs feeding a Redshift warehouse.\n\u2022 Rebuilt the core Spark ETL, cutting nightly batch time from 6h to 90min.\nETL Developer \u2014 DataBridge   (Jun 2019 \u2013 Mar 2021)\n\u2022 Migrated legacy SSIS packages to Python-based ETL.",
+          "Aisha Khan \u2014 skills: Skills\nPython, SQL, Apache Spark, Airflow, dbt, Kafka, Snowflake, Redshift, AWS, data modeling",
+          "Sarah Chen \u2014 skills: Skills\nPython, Django, FastAPI, PostgreSQL, Redis, Kafka, Celery, Docker, AWS, CI/CD",
+          "James Okafor \u2014 certifications: Certifications\n\u2022 CKA (Certified Kubernetes Administrator)\n\u2022 AWS SysOps Administrator",
+          "Bader Merheb \u2014 projects: PROJECTS\nBewe Partners CRM \u2013 Salon Management Platform\n\u2022\nBuilt a pixel-perfect, multi-tenant CRM for salons to manage bookings, staff, services, and customers \u2013 React +\nTypeScript + TailwindCSS frontend, FastAPI backend, and Supabase (PostgreSQL) for authentication, data,\nand row-level security.\n\u2022\nBuilt a separate CMS admin portal to provision salons and owner accounts; deployed the frontend and CMS on\nVercel and the FastAPI backend on Render.\nLikeMinded \u2013 Personality-Based Dating Platform\n\u2022\nCo-developed a personality-driven matching platform focused on compatibility over appearance. Frontend built\nusing React.js; and backend using FastAPI with Supabase (MySQL), implementing a matching algorithm, and\nconversation/chatting system.\nLikeMinded Mobile \u2013 iOS & Android App\n\u2022\nBuilt the cross-platform mobile app with React Native (TypeScript), extending the personality-based matching\nplatform to iOS and Android on the shared FastAPI and Supabase backend.\n\u2022\nImplemented native Google and Apple authentication, camera-based KYC identity verification, a\nchatbot-driven personality assessment, push notifications, and a real-time conversation system.\nAI Automated CV Checker\n\u2022\nDesigned and implemented automation workflows using N8N to ingest CV documents, preprocess content, and\nstore embeddings in a Qdrant vector database.\n\u2022\nBuilt retrieval pipelines to match CVs against job requirements and feed relevant context to a chatbot for\ncandidate-role fit analysis.\nGrab n Go Website (Restaurant Website)\n\u2022\nDeveloped a fully responsive restaurant website with an interactive menu, admin page, and user-friendly design\nusing PHP, Laravel, HTML, CSS, JavaScript, and MySQL."
+        ],
+        "reference": "Sarah Chen (microservices communicating over Kafka at TechFlow) and Aisha Khan (Kafka streaming ingestion at Finlytics) have worked with Kafka."
+      },
+      {
+        "user_input": "Who has experience with RAG and vector databases?",
+        "response": "The following candidates have experience with RAG and vector databases:\n\n*   **Fatima Al-Sayed**: She has built RAG chatbots using LangChain and Qdrant [1]. Her skills include RAG, Qdrant, and pgvector [3], and she specializes in retrieval-augmented generation and vector search [4].\n*   **Bader Merheb**: He has worked on RAG and GraphRAG workflows, which included document processing, embedding generation, and indexing [2].",
+        "retrieved_contexts": [
+          "Fatima Al-Sayed \u2014 experience: Experience\nAI Engineer \u2014 Maktabi AI   (Jan 2023 \u2013 Present)\n\u2022 Built RAG chatbots over legal documents using LangChain and Qdrant,\nwith inline citations.\n\u2022 Set up RAGAS-based evaluation, raising retrieval hit-rate from 68% to\n91%.\n\u2022 Deployed LLM services (FastAPI) with Langfuse tracing in production.\nNLP Engineer \u2014 TextLab   (Feb 2021 \u2013 Dec 2022)\n\u2022 Built Arabic NER pipelines with spaCy and Hugging Face Transformers.\n\u2022 Fine-tuned BERT-family models for document classification (F1 0.92).",
+          "Bader Merheb \u2014 experience: WORK EXPERIENCE\nMurex \u2013 Beirut, Mint L Hosn\nIntern Software Engineer (IS Dev-AI Team)\nJune 2025 \u2013 August 2025\nGained hands-on experience by building and testing AI automation workflows, exposing me to applied AI\nsystems in a production environment.\nSupported data ingestion pipelines used by AI agents, including document preprocessing and structured data\nhandling.\nMurex \u2013 Beirut, Mint L Hosn\nPart-Time Software Engineer (IS Dev-AI Team)\nOctober 2025 \u2013 December 2025\nDesigned and maintained automation workflows using n8n to support AI-driven systems, including data\ningestion and retrieval pipelines.\nWorked on RAG and GraphRAG workflows, handling document processing, embedding generation, indexing,\nand retrieval logic.\nIntegrated external APIs and internal services into AI pipelines, ensuring correct data flow and error handling.",
+          "Fatima Al-Sayed \u2014 skills: Skills\n\u2022 Python\n\u2022 LangChain\n\u2022 LlamaIndex\n\u2022 RAG\n\u2022 Qdrant\n\u2022 pgvector\n\u2022 Hugging Face\nTransformers\n\u2022 FastAPI\n\u2022 prompt engineering\n\u2022 RAGAS\n\u2022 spaCy",
+          "Fatima Al-Sayed \u2014 summary: Profile\nAI engineer specializing in LLM applications: retrieval-augmented\ngeneration, vector search, and evaluation. NLP background with production\ndeployments in Arabic and English.",
+          "Omar Haddad \u2014 experience: Experience\nSenior ML Engineer \u2014 RoadTech   (Sep 2023 \u2013 Present)\n\u2022 Built the ride-recommendation system (PyTorch) lifting conversion by 12%.\n\u2022 Set up the feature store and MLflow-based experiment tracking for the ML team.\nML Engineer \u2014 SightAI   (Feb 2021 \u2013 Aug 2023)\n\u2022 Trained and deployed object-detection models for retail shelf monitoring.\n\u2022 Deployed models to AWS SageMaker with automated retraining pipelines."
+        ],
+        "reference": "Fatima Al-Sayed has experience with RAG and vector databases: she built RAG chatbots using LangChain and Qdrant at Maktabi AI, and lists Qdrant and pgvector among her skills."
+      },
+      {
+        "user_input": "Which candidates speak French?",
+        "response": "The following candidates speak French:\n\n*   **Sophie Dubois:** Native speaker [1].\n*   **Nour Khalil:** Fluent [2].\n*   **Sarah Chen:** Intermediate proficiency [3].\n*   **Layla Nasser:** Fluent [4].",
+        "retrieved_contexts": [
+          "Sophie Dubois \u2014 languages: Languages\nFrench (native) \u00b7 English (fluent)",
+          "Nour Khalil \u2014 languages: Languages\nArabic (native) \u00b7 English (fluent) \u00b7 French (fluent)",
+          "Sarah Chen \u2014 languages: Languages\nArabic (native) \u00b7 English (fluent) \u00b7 French (intermediate)",
+          "Layla Nasser \u2014 languages: Languages\nArabic (native) \u00b7 French (fluent) \u00b7 English (fluent)",
+          "James Okafor \u2014 languages: Languages\nEnglish (native)"
+        ],
+        "reference": "Sarah Chen (intermediate), Layla Nasser (fluent), Nour Khalil (fluent), and Sophie Dubois (native) speak French."
+      },
+      {
+        "user_input": "Who reduced deployment time, and by how much?",
+        "response": "The following candidates reduced deployment time:\n\n*   **James Okafor:** At FinEdge, he reduced deployment time from 45 minutes to 6 minutes [1].\n*   **Daniel Kim:** At Whistle, he improved the release cycle from monthly to weekly [3].",
+        "retrieved_contexts": [
+          "James Okafor \u2014 experience: Experience\nPeriod\nCompany / Role\nHighlights\nMay 2023 \u2013\nPresent\nStackway\nSenior SRE\n\u2022 Defined SLOs and error budgets for 12 services; on-call\nincident commander.\n\u2022 Built the Prometheus/Grafana observability stack used by\n40 engineers.\nFeb 2019 \u2013 Apr\n2023\nFinEdge\nDevOps Engineer\n\u2022 Migrated workloads to Kubernetes (EKS) managed entirely\nwith Terraform.\n\u2022 Cut deployment time from 45 minutes to 6 via GitHub\nActions pipelines.\nJan 2017 \u2013 Jan\n2019\nCloudNine Hosting\nSystems Administrator\n\u2022 Managed 200+ Linux servers; wrote Ansible playbooks\nreplacing manual runbooks.",
+          "Viktor Ivanov \u2014 experience: Experience\nSecurity Engineer \u2014 BlueShield   (May 2021 \u2013 Present)\n\u2022 Perform web application penetration tests for enterprise clients (OWASP methodology).\n\u2022 Led AWS security reviews; found and remediated 3 critical misconfigurations.\n\u2022 Incident responder for ransomware and phishing cases.\nSOC Analyst \u2014 SecOps Ltd   (Jun 2018 \u2013 Apr 2021)\n\u2022 Triaged alerts in Splunk SIEM for 30+ enterprise customers.\n\u2022 Wrote Python automations reducing false-positive triage time by half.",
+          "Daniel Kim \u2014 experience: Experience\nMobile Engineer \u2014 Whistle   (Jul 2022 \u2013 Present)\n\u2022 Lead Flutter development for a messaging app with 500k MAU.\n\u2022 Set up mobile CI/CD with Fastlane; release cycle went from monthly to weekly.\nAndroid Developer \u2014 AppNova   (Mar 2019 \u2013 Jun 2022)\n\u2022 Built Kotlin apps totalling 1M+ downloads on Google Play.\n\u2022 Reduced crash rate from 2.1% to 0.3% through systematic instrumentation.",
+          "Sarah Chen \u2014 experience: Experience\nSenior Backend Engineer \u2014 CloudMed   (Jan 2025 \u2013 Present)\n\u2022 Own the patient-records API (FastAPI, PostgreSQL) serving 2M requests/day.\n\u2022 Introduced async task pipeline with Celery and Redis, cutting report latency by 60%.\nSenior Backend Engineer \u2014 TechFlow   (Jul 2022 \u2013 Dec 2024)\n\u2022 Broke a Django monolith into 6 microservices communicating over Kafka.\n\u2022 Led a team of 4 engineers; established code review and CI standards.\n\u2022 Reduced p95 API latency from 800ms to 220ms through query optimization.\nBackend Engineer \u2014 DataCorp   (Mar 2019 \u2013 Jun 2022)\n\u2022 Built Django REST APIs for a B2B analytics product.\n\u2022 Designed the PostgreSQL schema powering customer-facing dashboards.",
+          "Omar Haddad \u2014 experience: Experience\nSenior ML Engineer \u2014 RoadTech   (Sep 2023 \u2013 Present)\n\u2022 Built the ride-recommendation system (PyTorch) lifting conversion by 12%.\n\u2022 Set up the feature store and MLflow-based experiment tracking for the ML team.\nML Engineer \u2014 SightAI   (Feb 2021 \u2013 Aug 2023)\n\u2022 Trained and deployed object-detection models for retail shelf monitoring.\n\u2022 Deployed models to AWS SageMaker with automated retraining pipelines."
+        ],
+        "reference": "James Okafor cut deployment time from 45 minutes to 6 minutes at FinEdge via GitHub Actions pipelines."
+      },
+      {
+        "user_input": "Which candidate has shipped mobile apps with over a million downloads?",
+        "response": "Daniel Kim is the candidate who has shipped mobile apps with over a million downloads [2]. Specifically, during his time as an Android Developer at AppNova, he built Kotlin apps that reached 1M+ downloads on Google Play [2].",
+        "retrieved_contexts": [
+          "Daniel Kim \u2014 summary: Summary\nMobile developer shipping consumer apps since 2019. Native Android background, now leading\ncross-platform Flutter development.",
+          "Daniel Kim \u2014 experience: Experience\nMobile Engineer \u2014 Whistle   (Jul 2022 \u2013 Present)\n\u2022 Lead Flutter development for a messaging app with 500k MAU.\n\u2022 Set up mobile CI/CD with Fastlane; release cycle went from monthly to weekly.\nAndroid Developer \u2014 AppNova   (Mar 2019 \u2013 Jun 2022)\n\u2022 Built Kotlin apps totalling 1M+ downloads on Google Play.\n\u2022 Reduced crash rate from 2.1% to 0.3% through systematic instrumentation.",
+          "Sophie Dubois \u2014 experience: Experience\nSenior Product Manager \u2014 Sensei   (Jun 2023 \u2013 Present)\n\u2022 Own the roadmap for ML-powered document processing (OCR + extraction).\n\u2022 Shipped 3 major features that grew ARR by 25%.\nProduct Manager \u2014 Movado   (Sep 2019 \u2013 May 2023)\n\u2022 Led payments and checkout products for a marketplace with 2M users.\n\u2022 Ran continuous discovery; 40+ user interviews per quarter.\nBusiness Analyst \u2014 Yello   (Sep 2017 \u2013 Aug 2019)\n\u2022 Analyzed funnel data (SQL) and defined KPIs for the product org.",
+          "Bader Merheb \u2014 projects: PROJECTS\nBewe Partners CRM \u2013 Salon Management Platform\n\u2022\nBuilt a pixel-perfect, multi-tenant CRM for salons to manage bookings, staff, services, and customers \u2013 React +\nTypeScript + TailwindCSS frontend, FastAPI backend, and Supabase (PostgreSQL) for authentication, data,\nand row-level security.\n\u2022\nBuilt a separate CMS admin portal to provision salons and owner accounts; deployed the frontend and CMS on\nVercel and the FastAPI backend on Render.\nLikeMinded \u2013 Personality-Based Dating Platform\n\u2022\nCo-developed a personality-driven matching platform focused on compatibility over appearance. Frontend built\nusing React.js; and backend using FastAPI with Supabase (MySQL), implementing a matching algorithm, and\nconversation/chatting system.\nLikeMinded Mobile \u2013 iOS & Android App\n\u2022\nBuilt the cross-platform mobile app with React Native (TypeScript), extending the personality-based matching\nplatform to iOS and Android on the shared FastAPI and Supabase backend.\n\u2022\nImplemented native Google and Apple authentication, camera-based KYC identity verification, a\nchatbot-driven personality assessment, push notifications, and a real-time conversation system.\nAI Automated CV Checker\n\u2022\nDesigned and implemented automation workflows using N8N to ingest CV documents, preprocess content, and\nstore embeddings in a Qdrant vector database.\n\u2022\nBuilt retrieval pipelines to match CVs against job requirements and feed relevant context to a chatbot for\ncandidate-role fit analysis.\nGrab n Go Website (Restaurant Website)\n\u2022\nDeveloped a fully responsive restaurant website with an interactive menu, admin page, and user-friendly design\nusing PHP, Laravel, HTML, CSS, JavaScript, and MySQL.",
+          "Daniel Kim \u2014 skills: Skills\nKotlin, Flutter, Dart, Firebase, REST APIs, GraphQL, Fastlane, Swift (basic)"
+        ],
+        "reference": "Daniel Kim built Kotlin apps at AppNova totalling more than 1 million downloads on Google Play."
+      },
+      {
+        "user_input": "Who has led a team, and how big was it?",
+        "response": "Based on the provided CVs, the following candidates have experience leading teams:\n\n*   **Sarah Chen:** Led a team of 4 engineers while at TechFlow [2].\n*   **Grace Wanjiru:** Led a 30-person cloud migration program while at Zindua [4].",
+        "retrieved_contexts": [
+          "Sarah Chen \u2014 summary: Summary\nBackend engineer with 7+ years building Python services at scale. Strong in API design, relational data\nmodeling, and event-driven architectures. Led small teams and owns systems end-to-end, from design\nto on-call.",
+          "Sarah Chen \u2014 experience: Experience\nSenior Backend Engineer \u2014 CloudMed   (Jan 2025 \u2013 Present)\n\u2022 Own the patient-records API (FastAPI, PostgreSQL) serving 2M requests/day.\n\u2022 Introduced async task pipeline with Celery and Redis, cutting report latency by 60%.\nSenior Backend Engineer \u2014 TechFlow   (Jul 2022 \u2013 Dec 2024)\n\u2022 Broke a Django monolith into 6 microservices communicating over Kafka.\n\u2022 Led a team of 4 engineers; established code review and CI standards.\n\u2022 Reduced p95 API latency from 800ms to 220ms through query optimization.\nBackend Engineer \u2014 DataCorp   (Mar 2019 \u2013 Jun 2022)\n\u2022 Built Django REST APIs for a B2B analytics product.\n\u2022 Designed the PostgreSQL schema powering customer-facing dashboards.",
+          "Grace Wanjiru \u2014 summary: Summary\nCloud architect with 13 years from systems engineering to principal-level architecture. Designs\nmulti-cloud platforms, leads large migrations, and keeps the bill under control.",
+          "Grace Wanjiru \u2014 experience: Experience\nPrincipal Cloud Architect \u2014 Zindua   (Oct 2021 \u2013 Present)\n\u2022 Architected the multi-cloud platform (AWS + GCP) for a pan-African fintech.\n\u2022 Led a 30-person cloud migration program, completed 2 months early.\n\u2022 Cut annual cloud spend 35% via rightsizing and savings plans.\nCloud Engineer \u2014 CloudPath   (Mar 2017 \u2013 Sep 2021)\n\u2022 Executed 12 datacenter-to-AWS migrations for enterprise clients.\n\u2022 Standardized infrastructure-as-code with Terraform across all projects.\nSystems Engineer \u2014 TelcoOne   (Jan 2013 \u2013 Feb 2017)\n\u2022 Ran core Linux/VMware infrastructure for a national telco.",
+          "Layla Nasser \u2014 experience: Experience\nData Scientist \u2014 LevantPay   (Mar 2022 \u2013 Present)\n\u2022 Built the churn-prediction model (scikit-learn) saving an estimated $400k/year.\n\u2022 Designed and analyzed 20+ A/B tests for the growth team.\nData Analyst \u2014 RetailIQ   (Jan 2020 \u2013 Feb 2022)\n\u2022 Owned the executive KPI dashboards (SQL, Tableau).\n\u2022 Automated weekly reporting, saving the analytics team 10 hours/week."
+        ],
+        "reference": "Sarah Chen led a team of 4 engineers at TechFlow. Grace Wanjiru led a 30-person cloud migration program at Zindua."
+      },
+      {
+        "user_input": "We're hiring a senior DevOps/SRE engineer to run Kubernetes and Terraform infrastructure with strong observability skills. Who fits best?",
+        "response": "Based on the job requirements for a Senior DevOps/SRE engineer with expertise in Kubernetes, Terraform, and observability, here is the ranking of the candidates:\n\n**1. James Okafor**\nJames is the best fit as his experience aligns perfectly with all core requirements:\n*   **Kubernetes & Terraform:** He has extensive experience running Kubernetes in production [1] and managing infrastructure entirely with Terraform [2].\n*   **Observability:** He explicitly builds observability tools [1] and has hands-on experience building a Prometheus/Grafana stack used by 40 engineers [2].\n*   **Seniority:** He holds a Senior SRE title with 9 years of relevant experience [1].\n\n**2. Grace Wanjiru**\nGrace is a strong secondary candidate, though her profile leans more toward architecture than hands-on SRE/observability:\n*   **Kubernetes & Terraform:** She lists both as core skills [3] and has standardized infrastructure-as-code with Terraform [4].\n*   **Seniority:** She is a Principal Cloud Architect with 11 years of experience [4].\n*   **Observability:** Her profile does not explicitly mention observability skills or tools like Prometheus/Grafana [3][4].\n\n**Other Candidates:**\n*   **Sarah Chen, Aisha Khan, and Viktor Ivanov:** These candidates do not fit the requirement. Their experience is focused on Backend Engineering [5], Data Engineering [6], and Security Engineering [7], respectively. None of their profiles demonstrate the required combination of Kubernetes, Terraform, and observability expertise.",
+        "retrieved_contexts": [
+          "James Okafor \u2014 summary: Summary\nDevOps/SRE with 9 years across sysadmin, platform engineering, and reliability. Runs Kubernetes in\nproduction, automates everything with Terraform, and builds observability people actually use.",
+          "James Okafor \u2014 experience: Experience\nPeriod\nCompany / Role\nHighlights\nMay 2023 \u2013\nPresent\nStackway\nSenior SRE\n\u2022 Defined SLOs and error budgets for 12 services; on-call\nincident commander.\n\u2022 Built the Prometheus/Grafana observability stack used by\n40 engineers.\nFeb 2019 \u2013 Apr\n2023\nFinEdge\nDevOps Engineer\n\u2022 Migrated workloads to Kubernetes (EKS) managed entirely\nwith Terraform.\n\u2022 Cut deployment time from 45 minutes to 6 via GitHub\nActions pipelines.\nJan 2017 \u2013 Jan\n2019\nCloudNine Hosting\nSystems Administrator\n\u2022 Managed 200+ Linux servers; wrote Ansible playbooks\nreplacing manual runbooks.",
+          "Grace Wanjiru \u2014 skills: Skills\nAWS, GCP, Azure, Terraform, Kubernetes, networking, serverless, cost optimization, architecture\nreviews",
+          "Grace Wanjiru \u2014 experience: Experience\nPrincipal Cloud Architect \u2014 Zindua   (Oct 2021 \u2013 Present)\n\u2022 Architected the multi-cloud platform (AWS + GCP) for a pan-African fintech.\n\u2022 Led a 30-person cloud migration program, completed 2 months early.\n\u2022 Cut annual cloud spend 35% via rightsizing and savings plans.\nCloud Engineer \u2014 CloudPath   (Mar 2017 \u2013 Sep 2021)\n\u2022 Executed 12 datacenter-to-AWS migrations for enterprise clients.\n\u2022 Standardized infrastructure-as-code with Terraform across all projects.\nSystems Engineer \u2014 TelcoOne   (Jan 2013 \u2013 Feb 2017)\n\u2022 Ran core Linux/VMware infrastructure for a national telco.",
+          "Sarah Chen \u2014 experience: Experience\nSenior Backend Engineer \u2014 CloudMed   (Jan 2025 \u2013 Present)\n\u2022 Own the patient-records API (FastAPI, PostgreSQL) serving 2M requests/day.\n\u2022 Introduced async task pipeline with Celery and Redis, cutting report latency by 60%.\nSenior Backend Engineer \u2014 TechFlow   (Jul 2022 \u2013 Dec 2024)\n\u2022 Broke a Django monolith into 6 microservices communicating over Kafka.\n\u2022 Led a team of 4 engineers; established code review and CI standards.\n\u2022 Reduced p95 API latency from 800ms to 220ms through query optimization.\nBackend Engineer \u2014 DataCorp   (Mar 2019 \u2013 Jun 2022)\n\u2022 Built Django REST APIs for a B2B analytics product.\n\u2022 Designed the PostgreSQL schema powering customer-facing dashboards.",
+          "Aisha Khan \u2014 experience: Experience\nSenior Data Engineer \u2014 Finlytics   (Mar 2024 \u2013 Present)\n\u2022 Own the dbt/Snowflake warehouse (300+ models) powering company analytics.\n\u2022 Built Kafka streaming ingestion handling 50k events/second.\nData Engineer \u2014 NorthStar Analytics   (Apr 2021 \u2013 Feb 2024)\n\u2022 Orchestrated 80+ Airflow DAGs feeding a Redshift warehouse.\n\u2022 Rebuilt the core Spark ETL, cutting nightly batch time from 6h to 90min.\nETL Developer \u2014 DataBridge   (Jun 2019 \u2013 Mar 2021)\n\u2022 Migrated legacy SSIS packages to Python-based ETL.",
+          "Viktor Ivanov \u2014 experience: Experience\nSecurity Engineer \u2014 BlueShield   (May 2021 \u2013 Present)\n\u2022 Perform web application penetration tests for enterprise clients (OWASP methodology).\n\u2022 Led AWS security reviews; found and remediated 3 critical misconfigurations.\n\u2022 Incident responder for ransomware and phishing cases.\nSOC Analyst \u2014 SecOps Ltd   (Jun 2018 \u2013 Apr 2021)\n\u2022 Triaged alerts in Splunk SIEM for 30+ enterprise customers.\n\u2022 Wrote Python automations reducing false-positive triage time by half.",
+          "Aisha Khan \u2014 skills: Skills\nPython, SQL, Apache Spark, Airflow, dbt, Kafka, Snowflake, Redshift, AWS, data modeling"
+        ],
+        "reference": "James Okafor fits best: senior SRE with Kubernetes (CKA certified), Terraform, and observability experience (built the Prometheus/Grafana stack, defined SLOs). Grace Wanjiru is a strong secondary fit with Kubernetes and Terraform at architect level."
+      },
+      {
+        "user_input": "Which candidate best fits an AI engineer role building RAG chatbots with vector search?",
+        "response": "Based on the provided documents, the best candidates for an AI engineer role building RAG chatbots with vector search are:\n\n**1. Fatima Al-Sayed**\nFatima is the strongest candidate as she has direct, professional experience building RAG chatbots over documents using LangChain and Qdrant [1]. She specializes in retrieval-augmented generation and vector search [2], and has a proven track record of improving retrieval hit-rates from 68% to 91% using RAGAS evaluation [1].\n\n**2. Bader Merheb**\nBader has relevant hands-on experience with RAG and GraphRAG workflows, including document processing, embedding generation, and retrieval logic [4]. He has also implemented a Qdrant vector database to store embeddings and built retrieval pipelines to feed context to a chatbot [3]. However, his experience is more junior (0.5 years) compared to Fatima [3][4].\n\n**Other candidates:**\n*   **Omar Haddad:** While he has experience in machine learning, his profile focuses on computer vision and recommender systems rather than RAG or vector search [7].\n*   **Grace Wanjiru:** Her expertise is in cloud architecture and infrastructure, with no mention of RAG or AI engineering skills [6].\n*   **Tomas Garcia:** His experience is strictly in QA automation and testing frameworks [5][8].",
+        "retrieved_contexts": [
+          "Fatima Al-Sayed \u2014 experience: Experience\nAI Engineer \u2014 Maktabi AI   (Jan 2023 \u2013 Present)\n\u2022 Built RAG chatbots over legal documents using LangChain and Qdrant,\nwith inline citations.\n\u2022 Set up RAGAS-based evaluation, raising retrieval hit-rate from 68% to\n91%.\n\u2022 Deployed LLM services (FastAPI) with Langfuse tracing in production.\nNLP Engineer \u2014 TextLab   (Feb 2021 \u2013 Dec 2022)\n\u2022 Built Arabic NER pipelines with spaCy and Hugging Face Transformers.\n\u2022 Fine-tuned BERT-family models for document classification (F1 0.92).",
+          "Fatima Al-Sayed \u2014 summary: Profile\nAI engineer specializing in LLM applications: retrieval-augmented\ngeneration, vector search, and evaluation. NLP background with production\ndeployments in Arabic and English.",
+          "Bader Merheb \u2014 projects: PROJECTS\nBewe Partners CRM \u2013 Salon Management Platform\n\u2022\nBuilt a pixel-perfect, multi-tenant CRM for salons to manage bookings, staff, services, and customers \u2013 React +\nTypeScript + TailwindCSS frontend, FastAPI backend, and Supabase (PostgreSQL) for authentication, data,\nand row-level security.\n\u2022\nBuilt a separate CMS admin portal to provision salons and owner accounts; deployed the frontend and CMS on\nVercel and the FastAPI backend on Render.\nLikeMinded \u2013 Personality-Based Dating Platform\n\u2022\nCo-developed a personality-driven matching platform focused on compatibility over appearance. Frontend built\nusing React.js; and backend using FastAPI with Supabase (MySQL), implementing a matching algorithm, and\nconversation/chatting system.\nLikeMinded Mobile \u2013 iOS & Android App\n\u2022\nBuilt the cross-platform mobile app with React Native (TypeScript), extending the personality-based matching\nplatform to iOS and Android on the shared FastAPI and Supabase backend.\n\u2022\nImplemented native Google and Apple authentication, camera-based KYC identity verification, a\nchatbot-driven personality assessment, push notifications, and a real-time conversation system.\nAI Automated CV Checker\n\u2022\nDesigned and implemented automation workflows using N8N to ingest CV documents, preprocess content, and\nstore embeddings in a Qdrant vector database.\n\u2022\nBuilt retrieval pipelines to match CVs against job requirements and feed relevant context to a chatbot for\ncandidate-role fit analysis.\nGrab n Go Website (Restaurant Website)\n\u2022\nDeveloped a fully responsive restaurant website with an interactive menu, admin page, and user-friendly design\nusing PHP, Laravel, HTML, CSS, JavaScript, and MySQL.",
+          "Bader Merheb \u2014 experience: WORK EXPERIENCE\nMurex \u2013 Beirut, Mint L Hosn\nIntern Software Engineer (IS Dev-AI Team)\nJune 2025 \u2013 August 2025\nGained hands-on experience by building and testing AI automation workflows, exposing me to applied AI\nsystems in a production environment.\nSupported data ingestion pipelines used by AI agents, including document preprocessing and structured data\nhandling.\nMurex \u2013 Beirut, Mint L Hosn\nPart-Time Software Engineer (IS Dev-AI Team)\nOctober 2025 \u2013 December 2025\nDesigned and maintained automation workflows using n8n to support AI-driven systems, including data\ningestion and retrieval pipelines.\nWorked on RAG and GraphRAG workflows, handling document processing, embedding generation, indexing,\nand retrieval logic.\nIntegrated external APIs and internal services into AI pipelines, ensuring correct data flow and error handling.",
+          "Tomas Garcia \u2014 summary: Summary\nQA engineer who moved from manual testing to full automation ownership. Builds test frameworks,\nwires them into CI, and treats flaky tests as bugs.",
+          "Grace Wanjiru \u2014 skills: Skills\nAWS, GCP, Azure, Terraform, Kubernetes, networking, serverless, cost optimization, architecture\nreviews",
+          "Omar Haddad \u2014 skills: Skills\nPython, PyTorch, scikit-learn, MLflow, SageMaker, Docker, Airflow, SQL, computer vision,\nrecommender systems",
+          "Tomas Garcia \u2014 skills: Skills\nCypress, Playwright, Selenium, Python, JavaScript, Postman, JMeter, CI/CD, contract testing"
+        ],
+        "reference": "Fatima Al-Sayed is the best fit: she built RAG chatbots over legal documents with LangChain and Qdrant, set up RAGAS-based evaluation, and deployed LLM services with FastAPI and Langfuse."
+      },
+      {
+        "user_input": "We need a senior backend engineer for high-throughput payment systems. Who should we shortlist?",
+        "response": "Based on the job requirement for a senior backend engineer for high-throughput payment systems, here are the best-fitting candidates:\n\n**1. Hassan Fares**\n*   **Justification:** He is the strongest match due to his direct experience in payment processing, specifically building services that handle 3,000 transactions per second [3]. He has a proven background in high-throughput systems and has specifically addressed critical payment challenges like idempotency to prevent duplicate charges [1][3].\n\n**2. Sarah Chen**\n*   **Justification:** She is a Senior Backend Engineer with extensive experience managing high-traffic APIs, such as a patient-records system serving 2 million requests per day [2]. She has a strong background in event-driven architectures (Kafka) and performance optimization, having successfully reduced p95 latency in previous roles [2][5].\n\n**Other candidates:**\n*   **Elena Petrova:** Not a fit; she is a Senior Frontend Engineer specializing in React and accessibility [4][6].\n*   **Grace Wanjiru:** Not a fit; she is a Principal Cloud Architect focused on infrastructure and cloud strategy rather than backend application development [Profile].\n*   **Bader Merheb:** Not a fit; he is a junior/part-time engineer with only 0.5 years of experience [Profile].",
+        "retrieved_contexts": [
+          "Hassan Fares \u2014 summary: Summary\nBackend engineer working in Go on high-throughput systems. Payments and streaming background;\nobsessive about latency budgets and clean interfaces.",
+          "Sarah Chen \u2014 experience: Experience\nSenior Backend Engineer \u2014 CloudMed   (Jan 2025 \u2013 Present)\n\u2022 Own the patient-records API (FastAPI, PostgreSQL) serving 2M requests/day.\n\u2022 Introduced async task pipeline with Celery and Redis, cutting report latency by 60%.\nSenior Backend Engineer \u2014 TechFlow   (Jul 2022 \u2013 Dec 2024)\n\u2022 Broke a Django monolith into 6 microservices communicating over Kafka.\n\u2022 Led a team of 4 engineers; established code review and CI standards.\n\u2022 Reduced p95 API latency from 800ms to 220ms through query optimization.\nBackend Engineer \u2014 DataCorp   (Mar 2019 \u2013 Jun 2022)\n\u2022 Built Django REST APIs for a B2B analytics product.\n\u2022 Designed the PostgreSQL schema powering customer-facing dashboards.",
+          "Hassan Fares \u2014 experience: Experience\nBackend Engineer \u2014 Paylink   (Jun 2023 \u2013 Present)\n\u2022 Build payment-processing services in Go handling 3k transactions/second.\n\u2022 Designed the idempotency layer eliminating duplicate-charge incidents.\nBackend Developer \u2014 StreamCast   (Jan 2020 \u2013 May 2023)\n\u2022 Built Go microservices (gRPC) for a music-streaming platform.\n\u2022 Implemented playlist sync used by 800k daily listeners.",
+          "Elena Petrova \u2014 experience: Experience\nSenior Frontend Engineer \u2014 ShopHive   (Apr 2023 \u2013 Present)\n\u2022 Lead frontend for the checkout flow (Next.js), improving Core Web Vitals to green across the board.\n\u2022 Drove the accessibility program to WCAG 2.1 AA compliance.\nFrontend Developer \u2014 PixelWorks   (Jun 2020 \u2013 Mar 2023)\n\u2022 Built and maintained the company design system (React, TypeScript, Storybook).\n\u2022 Migrated a legacy jQuery app to React with zero downtime.",
+          "Sarah Chen \u2014 summary: Summary\nBackend engineer with 7+ years building Python services at scale. Strong in API design, relational data\nmodeling, and event-driven architectures. Led small teams and owns systems end-to-end, from design\nto on-call.",
+          "Elena Petrova \u2014 summary: Summary\nFrontend engineer specializing in React and TypeScript. Cares deeply about performance,\naccessibility, and design systems that scale across teams.",
+          "Bader Merheb \u2014 projects: PROJECTS\nBewe Partners CRM \u2013 Salon Management Platform\n\u2022\nBuilt a pixel-perfect, multi-tenant CRM for salons to manage bookings, staff, services, and customers \u2013 React +\nTypeScript + TailwindCSS frontend, FastAPI backend, and Supabase (PostgreSQL) for authentication, data,\nand row-level security.\n\u2022\nBuilt a separate CMS admin portal to provision salons and owner accounts; deployed the frontend and CMS on\nVercel and the FastAPI backend on Render.\nLikeMinded \u2013 Personality-Based Dating Platform\n\u2022\nCo-developed a personality-driven matching platform focused on compatibility over appearance. Frontend built\nusing React.js; and backend using FastAPI with Supabase (MySQL), implementing a matching algorithm, and\nconversation/chatting system.\nLikeMinded Mobile \u2013 iOS & Android App\n\u2022\nBuilt the cross-platform mobile app with React Native (TypeScript), extending the personality-based matching\nplatform to iOS and Android on the shared FastAPI and Supabase backend.\n\u2022\nImplemented native Google and Apple authentication, camera-based KYC identity verification, a\nchatbot-driven personality assessment, push notifications, and a real-time conversation system.\nAI Automated CV Checker\n\u2022\nDesigned and implemented automation workflows using N8N to ingest CV documents, preprocess content, and\nstore embeddings in a Qdrant vector database.\n\u2022\nBuilt retrieval pipelines to match CVs against job requirements and feed relevant context to a chatbot for\ncandidate-role fit analysis.\nGrab n Go Website (Restaurant Website)\n\u2022\nDeveloped a fully responsive restaurant website with an interactive menu, admin page, and user-friendly design\nusing PHP, Laravel, HTML, CSS, JavaScript, and MySQL.",
+          "Bader Merheb \u2014 experience: WORK EXPERIENCE\nMurex \u2013 Beirut, Mint L Hosn\nIntern Software Engineer (IS Dev-AI Team)\nJune 2025 \u2013 August 2025\nGained hands-on experience by building and testing AI automation workflows, exposing me to applied AI\nsystems in a production environment.\nSupported data ingestion pipelines used by AI agents, including document preprocessing and structured data\nhandling.\nMurex \u2013 Beirut, Mint L Hosn\nPart-Time Software Engineer (IS Dev-AI Team)\nOctober 2025 \u2013 December 2025\nDesigned and maintained automation workflows using n8n to support AI-driven systems, including data\ningestion and retrieval pipelines.\nWorked on RAG and GraphRAG workflows, handling document processing, embedding generation, indexing,\nand retrieval logic.\nIntegrated external APIs and internal services into AI pipelines, ensuring correct data flow and error handling."
+        ],
+        "reference": "Hassan Fares (payment-processing services in Go handling 3k transactions/second, idempotency layer at Paylink) and Sarah Chen (senior backend engineer with Kafka, Redis, and latency-optimization experience) should be shortlisted."
+      },
+      {
+        "user_input": "Who fits a data engineering role owning a Snowflake/dbt warehouse with streaming ingestion?",
+        "response": "**Aisha Khan** is the only candidate who fits the requirements for this role.\n\n*   **Aisha Khan:** She is the best fit as she explicitly \"owns the dbt/Snowflake warehouse\" [1] and has direct experience building \"Kafka streaming ingestion\" [1]. Her skill set includes both dbt and Snowflake [2].\n\nThe other candidates do not fit the requirements:\n*   **Sarah Chen:** While she has experience with Kafka [3], her background is in Backend Engineering (APIs, microservices, and PostgreSQL) rather than data engineering or warehouse ownership [3].\n*   **Hassan Fares:** His experience is in backend systems using Go, PostgreSQL, and RabbitMQ [4].\n*   **James Okafor:** His experience is in Site Reliability Engineering and DevOps (Kubernetes, Terraform, observability) [5][7].\n*   **Layla Nasser:** Her background is in Data Science (modeling, A/B testing, and visualization) [6][8].",
+        "retrieved_contexts": [
+          "Aisha Khan \u2014 experience: Experience\nSenior Data Engineer \u2014 Finlytics   (Mar 2024 \u2013 Present)\n\u2022 Own the dbt/Snowflake warehouse (300+ models) powering company analytics.\n\u2022 Built Kafka streaming ingestion handling 50k events/second.\nData Engineer \u2014 NorthStar Analytics   (Apr 2021 \u2013 Feb 2024)\n\u2022 Orchestrated 80+ Airflow DAGs feeding a Redshift warehouse.\n\u2022 Rebuilt the core Spark ETL, cutting nightly batch time from 6h to 90min.\nETL Developer \u2014 DataBridge   (Jun 2019 \u2013 Mar 2021)\n\u2022 Migrated legacy SSIS packages to Python-based ETL.",
+          "Aisha Khan \u2014 skills: Skills\nPython, SQL, Apache Spark, Airflow, dbt, Kafka, Snowflake, Redshift, AWS, data modeling",
+          "Sarah Chen \u2014 experience: Experience\nSenior Backend Engineer \u2014 CloudMed   (Jan 2025 \u2013 Present)\n\u2022 Own the patient-records API (FastAPI, PostgreSQL) serving 2M requests/day.\n\u2022 Introduced async task pipeline with Celery and Redis, cutting report latency by 60%.\nSenior Backend Engineer \u2014 TechFlow   (Jul 2022 \u2013 Dec 2024)\n\u2022 Broke a Django monolith into 6 microservices communicating over Kafka.\n\u2022 Led a team of 4 engineers; established code review and CI standards.\n\u2022 Reduced p95 API latency from 800ms to 220ms through query optimization.\nBackend Engineer \u2014 DataCorp   (Mar 2019 \u2013 Jun 2022)\n\u2022 Built Django REST APIs for a B2B analytics product.\n\u2022 Designed the PostgreSQL schema powering customer-facing dashboards.",
+          "Hassan Fares \u2014 summary: Summary\nBackend engineer working in Go on high-throughput systems. Payments and streaming background;\nobsessive about latency budgets and clean interfaces.",
+          "James Okafor \u2014 experience: Experience\nPeriod\nCompany / Role\nHighlights\nMay 2023 \u2013\nPresent\nStackway\nSenior SRE\n\u2022 Defined SLOs and error budgets for 12 services; on-call\nincident commander.\n\u2022 Built the Prometheus/Grafana observability stack used by\n40 engineers.\nFeb 2019 \u2013 Apr\n2023\nFinEdge\nDevOps Engineer\n\u2022 Migrated workloads to Kubernetes (EKS) managed entirely\nwith Terraform.\n\u2022 Cut deployment time from 45 minutes to 6 via GitHub\nActions pipelines.\nJan 2017 \u2013 Jan\n2019\nCloudNine Hosting\nSystems Administrator\n\u2022 Managed 200+ Linux servers; wrote Ansible playbooks\nreplacing manual runbooks.",
+          "Layla Nasser \u2014 summary: Summary\nData scientist blending statistical rigor with business sense. Builds churn and propensity models,\ndesigns A/B tests, and communicates results to non-technical stakeholders.",
+          "James Okafor \u2014 skills: Skills\nKubernetes, Terraform, AWS, GCP, Ansible, Prometheus, Grafana, Bash, Python, GitHub Actions",
+          "Layla Nasser \u2014 skills: Skills\nPython, pandas, scikit-learn, SQL, Tableau, Power BI, A/B testing, statistics, data storytelling"
+        ],
+        "reference": "Aisha Khan fits best: she owns a dbt/Snowflake warehouse of 300+ models at Finlytics, built Kafka streaming ingestion at 50k events/second, and is SnowPro Core certified."
+      },
+      {
+        "user_input": "We're looking for a frontend engineer strong in React, TypeScript, and accessibility. Who should we consider?",
+        "response": "Based on the job requirements for a frontend engineer strong in React, TypeScript, and accessibility, here are the best-fitting candidates:\n\n**1. Elena Petrova**\n*   **Justification:** She is the strongest match as she explicitly specializes in React and TypeScript [1]. She has professional experience building design systems with these technologies [2] and has a demonstrated track record in accessibility, having led a program to achieve WCAG 2.1 AA compliance [2].\n\n**2. Bader Merheb**\n*   **Justification:** He has demonstrated experience using React and TypeScript in multiple projects, including a CRM and a mobile app [4]. However, he is a part-time engineer with only 0.5 years of experience [profile], and his profile does not mention experience with accessibility.\n\n**3. Marco Rossi**\n*   **Justification:** He possesses the required technical skills, listing both React and TypeScript [5]. However, his profile focuses on full-stack development [6] and does not mention experience with accessibility.\n\n**Candidates not recommended:**\n*   **Sarah Chen:** Her experience is exclusively in backend engineering (Python, Django, FastAPI) [3][7].\n*   **Nour Khalil:** Her skills are focused on Python and Java, and she does not list React or TypeScript [8].",
+        "retrieved_contexts": [
+          "Elena Petrova \u2014 summary: Summary\nFrontend engineer specializing in React and TypeScript. Cares deeply about performance,\naccessibility, and design systems that scale across teams.",
+          "Elena Petrova \u2014 experience: Experience\nSenior Frontend Engineer \u2014 ShopHive   (Apr 2023 \u2013 Present)\n\u2022 Lead frontend for the checkout flow (Next.js), improving Core Web Vitals to green across the board.\n\u2022 Drove the accessibility program to WCAG 2.1 AA compliance.\nFrontend Developer \u2014 PixelWorks   (Jun 2020 \u2013 Mar 2023)\n\u2022 Built and maintained the company design system (React, TypeScript, Storybook).\n\u2022 Migrated a legacy jQuery app to React with zero downtime.",
+          "Sarah Chen \u2014 summary: Summary\nBackend engineer with 7+ years building Python services at scale. Strong in API design, relational data\nmodeling, and event-driven architectures. Led small teams and owns systems end-to-end, from design\nto on-call.",
+          "Bader Merheb \u2014 projects: PROJECTS\nBewe Partners CRM \u2013 Salon Management Platform\n\u2022\nBuilt a pixel-perfect, multi-tenant CRM for salons to manage bookings, staff, services, and customers \u2013 React +\nTypeScript + TailwindCSS frontend, FastAPI backend, and Supabase (PostgreSQL) for authentication, data,\nand row-level security.\n\u2022\nBuilt a separate CMS admin portal to provision salons and owner accounts; deployed the frontend and CMS on\nVercel and the FastAPI backend on Render.\nLikeMinded \u2013 Personality-Based Dating Platform\n\u2022\nCo-developed a personality-driven matching platform focused on compatibility over appearance. Frontend built\nusing React.js; and backend using FastAPI with Supabase (MySQL), implementing a matching algorithm, and\nconversation/chatting system.\nLikeMinded Mobile \u2013 iOS & Android App\n\u2022\nBuilt the cross-platform mobile app with React Native (TypeScript), extending the personality-based matching\nplatform to iOS and Android on the shared FastAPI and Supabase backend.\n\u2022\nImplemented native Google and Apple authentication, camera-based KYC identity verification, a\nchatbot-driven personality assessment, push notifications, and a real-time conversation system.\nAI Automated CV Checker\n\u2022\nDesigned and implemented automation workflows using N8N to ingest CV documents, preprocess content, and\nstore embeddings in a Qdrant vector database.\n\u2022\nBuilt retrieval pipelines to match CVs against job requirements and feed relevant context to a chatbot for\ncandidate-role fit analysis.\nGrab n Go Website (Restaurant Website)\n\u2022\nDeveloped a fully responsive restaurant website with an interactive menu, admin page, and user-friendly design\nusing PHP, Laravel, HTML, CSS, JavaScript, and MySQL.",
+          "Marco Rossi \u2014 skills: Skills\nJavaScript, TypeScript, Node.js, NestJS, React, MongoDB, PostgreSQL, Redis, Docker, AWS",
+          "Marco Rossi \u2014 summary: Summary\nFull-stack developer comfortable across the whole product: Node.js and NestJS on the back, React on\nthe front, PostgreSQL underneath, AWS around it all.",
+          "Sarah Chen \u2014 experience: Experience\nSenior Backend Engineer \u2014 CloudMed   (Jan 2025 \u2013 Present)\n\u2022 Own the patient-records API (FastAPI, PostgreSQL) serving 2M requests/day.\n\u2022 Introduced async task pipeline with Celery and Redis, cutting report latency by 60%.\nSenior Backend Engineer \u2014 TechFlow   (Jul 2022 \u2013 Dec 2024)\n\u2022 Broke a Django monolith into 6 microservices communicating over Kafka.\n\u2022 Led a team of 4 engineers; established code review and CI standards.\n\u2022 Reduced p95 API latency from 800ms to 220ms through query optimization.\nBackend Engineer \u2014 DataCorp   (Mar 2019 \u2013 Jun 2022)\n\u2022 Built Django REST APIs for a B2B analytics product.\n\u2022 Designed the PostgreSQL schema powering customer-facing dashboards.",
+          "Nour Khalil \u2014 summary: Summary\nRecent computer science graduate with internship and one year of professional experience.\nComfortable in Python and Java; eager to grow into backend development."
+        ],
+        "reference": "Elena Petrova is the strongest fit: senior frontend engineer with React, TypeScript, Next.js, and accessibility work to WCAG 2.1 AA. Marco Rossi is a possible secondary with React and TypeScript in a full-stack profile."
+      },
+      {
+        "user_input": "Who would you pick for an entry-level Python backend role we can train up?",
+        "response": "Based on your requirement for an entry-level Python backend role suitable for training, here is the ranking of the candidates:\n\n1. **Nour Khalil**\n   * **Justification:** Nour is the best fit as they are a recent graduate with only one year of professional experience [2]. They explicitly state they are \"eager to grow into backend development\" and have relevant foundational skills in Python, Flask, and SQL [2][5].\n\nThe other candidates are not suitable for an entry-level role for the following reasons:\n* **Sarah Chen:** Overqualified with 6+ years of experience and a background in leading teams and building services at scale [1][3].\n* **Layla Nasser:** Her experience is focused on data science, statistics, and data visualization rather than backend development [7].\n* **Fatima Al-Sayed:** Her profile is specialized in AI engineering, specifically RAG, LangChain, and LLM-related technologies [4].\n* **Tomas Garcia:** Overqualified with 7 years of experience, currently specialized in QA automation [6].",
+        "retrieved_contexts": [
+          "Sarah Chen \u2014 summary: Summary\nBackend engineer with 7+ years building Python services at scale. Strong in API design, relational data\nmodeling, and event-driven architectures. Led small teams and owns systems end-to-end, from design\nto on-call.",
+          "Nour Khalil \u2014 summary: Summary\nRecent computer science graduate with internship and one year of professional experience.\nComfortable in Python and Java; eager to grow into backend development.",
+          "Sarah Chen \u2014 skills: Skills\nPython, Django, FastAPI, PostgreSQL, Redis, Kafka, Celery, Docker, AWS, CI/CD",
+          "Fatima Al-Sayed \u2014 skills: Skills\n\u2022 Python\n\u2022 LangChain\n\u2022 LlamaIndex\n\u2022 RAG\n\u2022 Qdrant\n\u2022 pgvector\n\u2022 Hugging Face\nTransformers\n\u2022 FastAPI\n\u2022 prompt engineering\n\u2022 RAGAS\n\u2022 spaCy",
+          "Nour Khalil \u2014 skills: Skills\nPython, Java, Flask, Spring Boot (basic), Git, SQL, HTML/CSS",
+          "Tomas Garcia \u2014 skills: Skills\nCypress, Playwright, Selenium, Python, JavaScript, Postman, JMeter, CI/CD, contract testing",
+          "Layla Nasser \u2014 skills: Skills\nPython, pandas, scikit-learn, SQL, Tableau, Power BI, A/B testing, statistics, data storytelling"
+        ],
+        "reference": "Nour Khalil: a junior software engineer who develops REST APIs in Python (Flask) at LebTech Labs, with a 2024 BSc in Computer Science and internship experience in Java Spring Boot."
+      }
+    ]
+  }
+}

@@ -44,8 +44,19 @@ Measured on a hand-built gold set: 30 verified questions over 16 fixed sample CV
 | + intent routing & job-fit aggregation | 100% | **100%** | 0.98 |
 
 `section-hit@5` = the chunk that actually contains the answer was retrieved (file-level
-hit-rate saturates at ~97-100% on a corpus this size). Faithfulness / relevancy (RAGAS)
-and latency per config live in [eval/results/comparison.md](eval/results/comparison.md).
+hit-rate saturates at ~97-100% on a corpus this size).
+
+Generation quality (RAGAS, Gemini judge, 30 answered questions per config):
+
+| config | faithfulness | answer relevancy | latency p50 |
+|---|---|---|---|
+| baseline | 0.94 | 0.79 | 2.6 s |
+| full pipeline | 0.89 | **0.89** | 3.5 s |
+
+Better retrieval lifts relevancy sharply (+0.10). The small faithfulness dip is the
+job-fit ranking trade-off: comparative claims ("X fits best") are judged as weakly
+grounded even when each underlying fact is cited. Per-question detail in
+[eval/results/](eval/results/).
 
 ## Run locally (dev)
 

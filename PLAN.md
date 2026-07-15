@@ -96,12 +96,12 @@ This design decision is a great README/interview talking point.
 - Simple clean styling. Streaming responses optional polish.
 - **Done when:** full flow works locally end-to-end in the browser.
 
-### Phase 4 — Gold set + eval harness → BASELINE numbers (~1 day)
+### Phase 4 — Gold set + eval harness → BASELINE numbers (~1 day) ✅ DONE
 - Write the gold set: 25–40 questions over the fixed sample CVs (see format below), covering all 3 intents
 - `eval/run_eval.py`: runs every gold question through the pipeline → RAGAS (faithfulness, answer relevancy, context precision/recall) + custom hit-rate@5 and MRR + latency → markdown report
 - **Done when:** you have a baseline metrics table committed. Don't skip this — the before/after story needs the "before."
 
-### Phase 5 — Retrieval upgrades → AFTER numbers (~1–2 days)
+### Phase 5 — Retrieval upgrades → AFTER numbers (~1–2 days) ✅ DONE
 - Switch retrieval to hybrid (dense + BM25, RRF fusion) → re-run eval
 - Add bge-reranker: retrieve top-20 → rerank → keep top-5 → re-run eval
 - Add intent routing + candidate filters + job-fit aggregation (design above) → re-run eval

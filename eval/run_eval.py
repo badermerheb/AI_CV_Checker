@@ -132,12 +132,30 @@ def eval_generation(gold: list[dict], config: dict, config_name: str) -> dict:
 
 def run_ragas(samples: list[dict]) -> dict:
     from app.config import settings
-    from langchain_community.embeddings import FastEmbedEmbeddings
+    from langchain_core.embeddings import Embeddings
     from langchain_google_genai import ChatGoogleGenerativeAI
     from ragas import EvaluationDataset, RunConfig, evaluate
     from ragas.embeddings import LangchainEmbeddingsWrapper
     from ragas.llms import LangchainLLMWrapper
     from ragas.metrics import Faithfulness, ResponseRelevancy
+
+    class BgeEmbeddings(Embeddings):
+        """fastembed-backed embeddings. ragas telemetry reads `.model` and requires a
+        string; langchain's FastEmbedEmbeddings stores the raw model object there,
+        which crashes ragas's EmbeddingUsageEvent validation."""
+
+        model = "BAAI/bge-small-en-v1.5"
+
+        def __init__(self) -> None:
+            from fastembed import TextEmbedding
+
+            self._model = TextEmbedding(model_name=self.model)
+
+        def embed_documents(self, texts: list[str]) -> list[list[float]]:
+            return [v.tolist() for v in self._model.passage_embed(texts)]
+
+        def embed_query(self, text: str) -> list[float]:
+            return next(iter(self._model.query_embed(text))).tolist()
 
     judge = LangchainLLMWrapper(
         ChatGoogleGenerativeAI(
@@ -147,11 +165,12 @@ def run_ragas(samples: list[dict]) -> dict:
             transport="rest",  # async gRPC can hang under ragas's event loop on Windows
         )
     )
-    embeddings = LangchainEmbeddingsWrapper(FastEmbedEmbeddings(model_name="BAAI/bge-small-en-v1.5"))
+    embeddings = LangchainEmbeddingsWrapper(BgeEmbeddings())
     dataset = EvaluationDataset.from_list(samples)
     result = evaluate(
         dataset,
-        metrics=[Faithfulness(), ResponseRelevancy()],
+        # strictness=1: free-tier Gemini rejects candidateCount > 1
+        metrics=[Faithfulness(), ResponseRelevancy(strictness=1)],
         llm=judge,
         embeddings=embeddings,
         # generous timeout: free-tier 429s carry ~45s retry delays

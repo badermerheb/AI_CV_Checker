@@ -1,0 +1,529 @@
+{
+  "config": {
+    "mode": "hybrid",
+    "rerank": false,
+    "routing": false
+  },
+  "retrieval": {
+    "summary": {
+      "hit_rate@5": 1.0,
+      "section_hit@5": 1.0,
+      "recall@5": 0.9667,
+      "mrr": 0.95,
+      "retrieval_p50_s": 2.091
+    },
+    "per_question": [
+      {
+        "id": 1,
+        "intent": "single_candidate",
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "section_hit": true,
+        "latency_s": 16.683,
+        "routed_intent": "general",
+        "retrieved": [
+          "grace_wanjiru.pdf#summary",
+          "grace_wanjiru.pdf#certifications",
+          "grace_wanjiru.pdf#languages",
+          "grace_wanjiru.pdf#experience",
+          "grace_wanjiru.pdf#"
+        ]
+      },
+      {
+        "id": 2,
+        "intent": "single_candidate",
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "section_hit": true,
+        "latency_s": 2.104,
+        "routed_intent": "general",
+        "retrieved": [
+          "viktor_ivanov.pdf#certifications",
+          "viktor_ivanov.pdf#",
+          "viktor_ivanov.pdf#education",
+          "viktor_ivanov.pdf#languages",
+          "viktor_ivanov.pdf#skills"
+        ]
+      },
+      {
+        "id": 3,
+        "intent": "single_candidate",
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "section_hit": true,
+        "latency_s": 2.094,
+        "routed_intent": "general",
+        "retrieved": [
+          "sarah_chen.pdf#",
+          "sarah_chen.pdf#certifications",
+          "sarah_chen.pdf#experience",
+          "sarah_chen.pdf#summary",
+          "sarah_chen.pdf#skills"
+        ]
+      },
+      {
+        "id": 4,
+        "intent": "single_candidate",
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "section_hit": true,
+        "latency_s": 2.091,
+        "routed_intent": "general",
+        "retrieved": [
+          "omar_haddad.pdf#experience",
+          "omar_haddad.pdf#summary",
+          "omar_haddad.pdf#",
+          "omar_haddad.pdf#skills",
+          "omar_haddad.pdf#languages"
+        ]
+      },
+      {
+        "id": 5,
+        "intent": "single_candidate",
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "section_hit": true,
+        "latency_s": 2.09,
+        "routed_intent": "general",
+        "retrieved": [
+          "fatima_al_sayed.pdf#education",
+          "fatima_al_sayed.pdf#languages",
+          "fatima_al_sayed.pdf#contact",
+          "fatima_al_sayed.pdf#",
+          "fatima_al_sayed.pdf#summary"
+        ]
+      },
+      {
+        "id": 6,
+        "intent": "single_candidate",
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "section_hit": true,
+        "latency_s": 2.076,
+        "routed_intent": "general",
+        "retrieved": [
+          "layla_nasser.pdf#languages",
+          "layla_nasser.pdf#",
+          "layla_nasser.pdf#education",
+          "layla_nasser.pdf#skills",
+          "hassan_fares.pdf#languages"
+        ]
+      },
+      {
+        "id": 7,
+        "intent": "single_candidate",
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "section_hit": true,
+        "latency_s": 2.085,
+        "routed_intent": "general",
+        "retrieved": [
+          "daniel_kim.pdf#experience",
+          "daniel_kim.pdf#",
+          "daniel_kim.pdf#skills",
+          "daniel_kim.pdf#summary",
+          "daniel_kim.pdf#languages"
+        ]
+      },
+      {
+        "id": 8,
+        "intent": "single_candidate",
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "section_hit": true,
+        "latency_s": 2.091,
+        "routed_intent": "general",
+        "retrieved": [
+          "mia_johansson.pdf#summary",
+          "mia_johansson.pdf#experience",
+          "mia_johansson.pdf#",
+          "mia_johansson.pdf#education",
+          "BaderMerheb_CV.pdf#experience"
+        ]
+      },
+      {
+        "id": 9,
+        "intent": "single_candidate",
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "section_hit": true,
+        "latency_s": 2.104,
+        "routed_intent": "general",
+        "retrieved": [
+          "hassan_fares.pdf#experience",
+          "hassan_fares.pdf#summary",
+          "hassan_fares.pdf#",
+          "hassan_fares.pdf#skills",
+          "BaderMerheb_CV.pdf#experience"
+        ]
+      },
+      {
+        "id": 10,
+        "intent": "single_candidate",
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "section_hit": true,
+        "latency_s": 2.118,
+        "routed_intent": "general",
+        "retrieved": [
+          "aisha_khan.pdf#experience",
+          "aisha_khan.pdf#certifications",
+          "aisha_khan.pdf#",
+          "aisha_khan.pdf#languages",
+          "aisha_khan.pdf#skills"
+        ]
+      },
+      {
+        "id": 11,
+        "intent": "single_candidate",
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "section_hit": true,
+        "latency_s": 2.081,
+        "routed_intent": "general",
+        "retrieved": [
+          "nour_khalil.pdf#summary",
+          "nour_khalil.pdf#education",
+          "nour_khalil.pdf#",
+          "nour_khalil.pdf#languages",
+          "nour_khalil.pdf#skills"
+        ]
+      },
+      {
+        "id": 12,
+        "intent": "single_candidate",
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "section_hit": true,
+        "latency_s": 2.094,
+        "routed_intent": "general",
+        "retrieved": [
+          "elena_petrova.pdf#experience",
+          "elena_petrova.pdf#summary",
+          "elena_petrova.pdf#",
+          "elena_petrova.pdf#skills",
+          "elena_petrova.pdf#languages"
+        ]
+      },
+      {
+        "id": 13,
+        "intent": "single_candidate",
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "section_hit": true,
+        "latency_s": 2.086,
+        "routed_intent": "general",
+        "retrieved": [
+          "james_okafor.pdf#experience",
+          "james_okafor.pdf#",
+          "james_okafor.pdf#languages",
+          "james_okafor.pdf#summary",
+          "james_okafor.pdf#skills"
+        ]
+      },
+      {
+        "id": 14,
+        "intent": "single_candidate",
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "section_hit": true,
+        "latency_s": 2.082,
+        "routed_intent": "general",
+        "retrieved": [
+          "sophie_dubois.pdf#",
+          "sophie_dubois.pdf#experience",
+          "sophie_dubois.pdf#languages",
+          "sophie_dubois.pdf#skills",
+          "sophie_dubois.pdf#education"
+        ]
+      },
+      {
+        "id": 15,
+        "intent": "single_candidate",
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "section_hit": true,
+        "latency_s": 2.061,
+        "routed_intent": "general",
+        "retrieved": [
+          "tomas_garcia.pdf#experience",
+          "tomas_garcia.pdf#certifications",
+          "tomas_garcia.pdf#summary",
+          "tomas_garcia.pdf#skills",
+          "tomas_garcia.pdf#"
+        ]
+      },
+      {
+        "id": 16,
+        "intent": "single_candidate",
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "section_hit": true,
+        "latency_s": 2.058,
+        "routed_intent": "general",
+        "retrieved": [
+          "marco_rossi.pdf#experience",
+          "marco_rossi.pdf#",
+          "marco_rossi.pdf#languages",
+          "marco_rossi.pdf#skills",
+          "marco_rossi.pdf#education"
+        ]
+      },
+      {
+        "id": 17,
+        "intent": "general",
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "section_hit": null,
+        "latency_s": 2.12,
+        "routed_intent": "general",
+        "retrieved": [
+          "nour_khalil.pdf#",
+          "BaderMerheb_CV.pdf#",
+          "BaderMerheb_CV.pdf#projects",
+          "layla_nasser.pdf#",
+          "layla_nasser.pdf#education"
+        ]
+      },
+      {
+        "id": 18,
+        "intent": "general",
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "section_hit": true,
+        "latency_s": 2.093,
+        "routed_intent": "general",
+        "retrieved": [
+          "james_okafor.pdf#skills",
+          "james_okafor.pdf#summary",
+          "james_okafor.pdf#experience",
+          "grace_wanjiru.pdf#skills",
+          "james_okafor.pdf#certifications"
+        ]
+      },
+      {
+        "id": 19,
+        "intent": "general",
+        "hit": true,
+        "recall": 0.5,
+        "rr": 1.0,
+        "section_hit": true,
+        "latency_s": 2.108,
+        "routed_intent": "general",
+        "retrieved": [
+          "aisha_khan.pdf#skills",
+          "BaderMerheb_CV.pdf#experience",
+          "james_okafor.pdf#certifications",
+          "hassan_fares.pdf#summary",
+          "sophie_dubois.pdf#summary"
+        ]
+      },
+      {
+        "id": 20,
+        "intent": "general",
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.25,
+        "section_hit": true,
+        "latency_s": 2.091,
+        "routed_intent": "general",
+        "retrieved": [
+          "aisha_khan.pdf#skills",
+          "BaderMerheb_CV.pdf#projects",
+          "layla_nasser.pdf#skills",
+          "fatima_al_sayed.pdf#experience",
+          "BaderMerheb_CV.pdf#experience"
+        ]
+      },
+      {
+        "id": 21,
+        "intent": "general",
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "section_hit": true,
+        "latency_s": 2.089,
+        "routed_intent": "general",
+        "retrieved": [
+          "sophie_dubois.pdf#languages",
+          "layla_nasser.pdf#languages",
+          "nour_khalil.pdf#languages",
+          "sarah_chen.pdf#languages",
+          "marco_rossi.pdf#languages"
+        ]
+      },
+      {
+        "id": 22,
+        "intent": "general",
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "section_hit": true,
+        "latency_s": 2.087,
+        "routed_intent": "general",
+        "retrieved": [
+          "james_okafor.pdf#experience",
+          "viktor_ivanov.pdf#experience",
+          "BaderMerheb_CV.pdf#projects",
+          "hassan_fares.pdf#summary",
+          "viktor_ivanov.pdf#"
+        ]
+      },
+      {
+        "id": 23,
+        "intent": "general",
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "section_hit": true,
+        "latency_s": 2.092,
+        "routed_intent": "general",
+        "retrieved": [
+          "daniel_kim.pdf#summary",
+          "daniel_kim.pdf#experience",
+          "BaderMerheb_CV.pdf#projects",
+          "daniel_kim.pdf#",
+          "hassan_fares.pdf#skills"
+        ]
+      },
+      {
+        "id": 24,
+        "intent": "general",
+        "hit": true,
+        "recall": 0.5,
+        "rr": 1.0,
+        "section_hit": true,
+        "latency_s": 2.073,
+        "routed_intent": "general",
+        "retrieved": [
+          "sarah_chen.pdf#summary",
+          "aisha_khan.pdf#skills",
+          "sarah_chen.pdf#experience",
+          "james_okafor.pdf#skills",
+          "layla_nasser.pdf#experience"
+        ]
+      },
+      {
+        "id": 25,
+        "intent": "job_fit",
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "section_hit": null,
+        "latency_s": 2.102,
+        "routed_intent": "general",
+        "retrieved": [
+          "james_okafor.pdf#summary",
+          "james_okafor.pdf#experience",
+          "james_okafor.pdf#skills",
+          "grace_wanjiru.pdf#skills",
+          "grace_wanjiru.pdf#experience"
+        ]
+      },
+      {
+        "id": 26,
+        "intent": "job_fit",
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "section_hit": null,
+        "latency_s": 2.09,
+        "routed_intent": "general",
+        "retrieved": [
+          "fatima_al_sayed.pdf#experience",
+          "fatima_al_sayed.pdf#summary",
+          "BaderMerheb_CV.pdf#projects",
+          "BaderMerheb_CV.pdf#experience",
+          "fatima_al_sayed.pdf#skills"
+        ]
+      },
+      {
+        "id": 27,
+        "intent": "job_fit",
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "section_hit": null,
+        "latency_s": 2.107,
+        "routed_intent": "general",
+        "retrieved": [
+          "hassan_fares.pdf#summary",
+          "hassan_fares.pdf#experience",
+          "sarah_chen.pdf#experience",
+          "hassan_fares.pdf#skills",
+          "tomas_garcia.pdf#experience"
+        ]
+      },
+      {
+        "id": 28,
+        "intent": "job_fit",
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "section_hit": null,
+        "latency_s": 2.104,
+        "routed_intent": "general",
+        "retrieved": [
+          "aisha_khan.pdf#experience",
+          "aisha_khan.pdf#skills",
+          "aisha_khan.pdf#summary",
+          "BaderMerheb_CV.pdf#projects",
+          "hassan_fares.pdf#skills"
+        ]
+      },
+      {
+        "id": 29,
+        "intent": "job_fit",
+        "hit": true,
+        "recall": 1.0,
+        "rr": 1.0,
+        "section_hit": null,
+        "latency_s": 2.118,
+        "routed_intent": "general",
+        "retrieved": [
+          "elena_petrova.pdf#summary",
+          "elena_petrova.pdf#experience",
+          "elena_petrova.pdf#skills",
+          "marco_rossi.pdf#skills",
+          "BaderMerheb_CV.pdf#projects"
+        ]
+      },
+      {
+        "id": 30,
+        "intent": "job_fit",
+        "hit": true,
+        "recall": 1.0,
+        "rr": 0.25,
+        "section_hit": null,
+        "latency_s": 2.102,
+        "routed_intent": "general",
+        "retrieved": [
+          "sarah_chen.pdf#summary",
+          "BaderMerheb_CV.pdf#projects",
+          "sarah_chen.pdf#skills",
+          "nour_khalil.pdf#skills",
+          "nour_khalil.pdf#summary"
+        ]
+      }
+    ]
+  },
+  "generation": null
+}

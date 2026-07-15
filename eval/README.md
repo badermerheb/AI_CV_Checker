@@ -66,3 +66,13 @@ reranker, free-tier LLM).
 - **Job-fit ranking needs aggregation, not top-k**: plain retrieval biases toward
   whoever has the most matching chunks; grouping scores per candidate and ranking a
   shortlist brought multi-candidate recall@5 to 100%.
+- **Better retrieval lifts relevancy, not faithfulness**: answer relevancy jumped
+  0.79 → 0.89 with the full pipeline, but faithfulness dipped 0.94 → 0.89 — job-fit
+  answers make comparative claims ("X fits best") that the judge scores as weakly
+  grounded even when every underlying fact is cited. A ranking is an inference over
+  excerpts, not a quote from them; that is inherent to the feature, not a retrieval
+  regression.
+- **Free-tier quota archaeology**: gemini-3.5-flash allows 20 requests/day;
+  gemini-2.0-flash now has ZERO free quota; free-tier models reject
+  `candidateCount > 1` (RAGAS relevancy needs `strictness=1`). Model choice on the
+  free tier is a real engineering constraint, not a footnote.
