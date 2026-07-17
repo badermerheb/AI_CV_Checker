@@ -29,7 +29,10 @@ class LocalFastEmbedEmbedding(BaseEmbedding):
         return next(iter(self._model.passage_embed([text]))).tolist()
 
     def _get_text_embeddings(self, texts: list[str]) -> list[list[float]]:
-        return [vector.tolist() for vector in self._model.passage_embed(texts)]
+        # One at a time on purpose: onnxruntime's memory arena grows to the largest
+        # batch ever embedded and never shrinks, which OOMs 512 MB free-tier hosts
+        # during ingestion (queries are single texts and unaffected).
+        return [next(iter(self._model.passage_embed([text]))).tolist() for text in texts]
 
     async def _aget_query_embedding(self, query: str) -> list[float]:
         return self._get_query_embedding(query)
