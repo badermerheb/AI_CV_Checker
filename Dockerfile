@@ -9,8 +9,12 @@ RUN npm run build
 # ---- stage 2: Python API serving the built frontend -------------------------
 FROM python:3.12-slim
 WORKDIR /app
+# FASTEMBED_CACHE_PATH must be a real image path: fastembed defaults to the OS
+# temp dir, which is shadowed at runtime - the pre-baked models would be ignored
+# and re-downloaded on every cold start.
 ENV PIP_NO_CACHE_DIR=1 \
     HF_HOME=/app/.cache \
+    FASTEMBED_CACHE_PATH=/app/.cache/fastembed \
     PYTHONUNBUFFERED=1
 
 COPY backend/requirements.txt .
