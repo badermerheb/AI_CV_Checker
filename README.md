@@ -1,5 +1,8 @@
 # AI CV Checker
 
+**Live demo: https://ai-cv-checker-e621.onrender.com** *(free tier — first request
+after idle takes ~1 min to wake)*
+
 A production-grade RAG app for recruiters: upload CVs/resumes, then chat with them —
 "Who best fits this job description?", "Tell me about candidate X", or general questions
 across all CVs. Answers come with inline citations back to the source CVs.
