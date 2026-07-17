@@ -1,3 +1,13 @@
+---
+title: AI CV Checker
+emoji: ✅
+colorFrom: green
+colorTo: gray
+sdk: docker
+app_port: 8000
+pinned: false
+---
+
 # AI CV Checker
 
 **Live demo: https://ai-cv-checker-e621.onrender.com** *(free tier — first request
