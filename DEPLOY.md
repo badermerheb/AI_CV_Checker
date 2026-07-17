@@ -28,6 +28,12 @@ Total cost: $0.
 3. Instance type: **Free**.
 4. Add the environment variables above → Deploy.
 5. Health check path: `/health`.
+6. **Memory (important)**: the free instance has 512 MB, which does not fit the
+   embedding model + cross-encoder reranker together — the first chat request
+   OOMs. Add `RERANK=false`: hybrid-only retrieval still scores 100%
+   section-hit@5 and 0.95 MRR on the gold set (vs 0.98 with rerank), so this is
+   a measured trade-off, not a downgrade. For the full pipeline including the
+   reranker, use Hugging Face Spaces (16 GB) instead — section 2B.
 
 ## 2B. Or: Hugging Face Spaces
 
