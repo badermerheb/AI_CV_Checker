@@ -17,7 +17,7 @@ DENSE_MODEL = "BAAI/bge-small-en-v1.5"
 SPARSE_MODEL = "Qdrant/bm25"
 
 # Keys that must not pollute the text used for embedding or LLM prompts.
-_HIDDEN_METADATA_KEYS = ["candidate_id", "filename", "chunk_index", "page"]
+_HIDDEN_METADATA_KEYS = ["candidate_id", "filename", "chunk_index", "page", "workspace_id"]
 
 
 @lru_cache
@@ -39,12 +39,31 @@ def get_index() -> VectorStoreIndex:
     )
 
 
-def index_chunks(chunks: list[Chunk], candidate_id: str, candidate_name: str, filename: str) -> int:
+def ensure_payload_indexes(client: QdrantClient | None = None) -> None:
+    """Qdrant Cloud requires payload indexes for filtered fields (strict mode)."""
+    client = client or get_client()
+    if not client.collection_exists(COLLECTION):
+        return
+    for field in ("workspace_id", "candidate_id", "candidate_name"):
+        try:
+            client.create_payload_index(
+                collection_name=COLLECTION,
+                field_name=field,
+                field_schema=qmodels.PayloadSchemaType.KEYWORD,
+            )
+        except Exception:
+            pass  # already exists
+
+
+def index_chunks(
+    chunks: list[Chunk], candidate_id: str, candidate_name: str, filename: str, workspace_id: str
+) -> int:
     nodes = []
     for chunk in chunks:
         node = TextNode(
             text=chunk.text,
             metadata={
+                "workspace_id": workspace_id,
                 "candidate_id": candidate_id,
                 "candidate_name": candidate_name,
                 "filename": filename,
@@ -57,10 +76,11 @@ def index_chunks(chunks: list[Chunk], candidate_id: str, candidate_name: str, fi
         node.excluded_llm_metadata_keys = _HIDDEN_METADATA_KEYS
         nodes.append(node)
     get_index().insert_nodes(nodes)
+    ensure_payload_indexes()
     return len(nodes)
 
 
-def delete_candidate_points(candidate_id: str) -> None:
+def delete_candidate_points(candidate_id: str, workspace_id: str) -> None:
     client = get_client()
     if not client.collection_exists(COLLECTION):
         return
@@ -71,15 +91,23 @@ def delete_candidate_points(candidate_id: str) -> None:
                 must=[
                     qmodels.FieldCondition(
                         key="candidate_id", match=qmodels.MatchValue(value=candidate_id)
-                    )
+                    ),
+                    qmodels.FieldCondition(
+                        key="workspace_id", match=qmodels.MatchValue(value=workspace_id)
+                    ),
                 ]
             )
         ),
     )
 
 
-def count_points() -> int:
+def count_points(workspaces: list[str] | None = None) -> int:
     client = get_client()
     if not client.collection_exists(COLLECTION):
         return 0
-    return client.count(COLLECTION).count
+    count_filter = None
+    if workspaces:
+        count_filter = qmodels.Filter(
+            must=[qmodels.FieldCondition(key="workspace_id", match=qmodels.MatchAny(any=workspaces))]
+        )
+    return client.count(COLLECTION, count_filter=count_filter).count

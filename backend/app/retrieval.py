@@ -47,20 +47,24 @@ def retrieve(
     fetch_k: int | None = None,
     rerank: bool = False,
     candidate_names: list[str] | None = None,
+    workspaces: list[str] | None = None,
 ) -> list[NodeWithScore]:
     index = vectorstore.get_index()
     fetch_k = fetch_k or settings.fetch_k
     k = fetch_k if rerank else top_k
 
-    kwargs: dict = {}
-    if candidate_names:
-        kwargs["filters"] = MetadataFilters(
-            filters=[
-                MetadataFilter(
-                    key="candidate_name", operator=FilterOperator.IN, value=candidate_names
-                )
-            ]
+    filters: list[MetadataFilter] = []
+    if workspaces:
+        filters.append(
+            MetadataFilter(key="workspace_id", operator=FilterOperator.IN, value=workspaces)
         )
+    if candidate_names:
+        filters.append(
+            MetadataFilter(key="candidate_name", operator=FilterOperator.IN, value=candidate_names)
+        )
+    kwargs: dict = {}
+    if filters:
+        kwargs["filters"] = MetadataFilters(filters=filters)
 
     if mode == "hybrid":
         retriever = index.as_retriever(

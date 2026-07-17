@@ -17,6 +17,7 @@ Total cost: $0.
 | `GOOGLE_API_KEY` | your Gemini key |
 | `QDRANT_URL` | Qdrant Cloud cluster URL (`https://xyz.cloud.qdrant.io:6333`) |
 | `QDRANT_API_KEY` | Qdrant Cloud key |
+| `DATABASE_URL` | Neon/Supabase Postgres connection string (profiles + sessions persist across restarts) |
 | `LANGFUSE_PUBLIC_KEY` / `LANGFUSE_SECRET_KEY` | Langfuse project keys |
 | `LANGFUSE_HOST` | `https://cloud.langfuse.com` |
 | `PORT` | `7860` on HF Spaces; leave default elsewhere (Render sets it) |
@@ -69,8 +70,12 @@ podman run --rm -p 8080:8000 --env-file backend/.env \
 - **Cold starts**: free Render/HF instances sleep when idle; first request after a
   nap takes ~30-60 s (models are pre-baked into the image, so it's process start,
   not downloads). Mention it in the README so demo visitors aren't surprised.
-- **Ephemeral disk**: the SQLite profile store resets on redeploy/restart — chunks
-  live in Qdrant Cloud, but re-upload CVs to rebuild profiles, or re-seed (step 3).
+- **State survives restarts**: chunks live in Qdrant Cloud and profiles/sessions in
+  Neon Postgres, so the container is stateless — restarts and redeploys lose nothing.
+  (Without `DATABASE_URL` it falls back to in-container SQLite, which is ephemeral.)
+- **Workspaces**: visitor uploads land in anonymous per-browser workspaces; the shared
+  demo corpus is read-only (uploads to it require `ALLOW_DEMO_WRITES=true`, used only
+  for seeding).
 - **Gemini free tier**: `gemini-3.1-flash-lite` allows 500 requests/day. Each chat
   costs 2 calls (router + answer); each uploaded CV costs 1. Fine for a demo, and
   the app returns a clean 429 message when the quota is hit.

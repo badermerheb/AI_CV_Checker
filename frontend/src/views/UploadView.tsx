@@ -82,7 +82,7 @@ export default function UploadView({ onIngested }: { onIngested: () => void }) {
         <p className="drop-lead">Drop PDF or DOCX files here</p>
         <p className="drop-sub">
           Each CV is parsed, profiled, and indexed for search. Re-uploading a file replaces its
-          earlier version.
+          earlier version. Uploads stay private to this browser — other visitors never see them.
         </p>
         <button type="button" className="btn-secondary" onClick={() => inputRef.current?.click()}>
           Choose files

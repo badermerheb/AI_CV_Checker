@@ -30,8 +30,14 @@ React (Vite + TS)  ──/api──►  FastAPI + LlamaIndex
                                  │          → Gemini answer with inline [n] citations
                                  │
                                  ├─ Langfuse traces on every request
-                                 └─ SQLite: candidate profiles + chat sessions
+                                 └─ Postgres (Neon): profiles + chat sessions
+                                    (SQLite fallback when DATABASE_URL is unset)
 Qdrant in Podman (dev) / Qdrant Cloud (prod)
+
+Multi-user isolation without logins: each browser gets an anonymous workspace id
+(localStorage → X-Workspace-Id header). Uploads are tagged with it in Qdrant payloads
+and Postgres rows; every query filters to your workspace + the shared read-only demo
+corpus. Other visitors never see your uploads.
 ```
 
 ## Evaluation results

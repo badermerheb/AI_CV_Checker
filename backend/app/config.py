@@ -29,5 +29,13 @@ class Settings(BaseSettings):
     # Comma-separated origins allowed by CORS (the deployed frontend's URL in prod).
     allowed_origins: str = "http://localhost:5173"
 
+    # Postgres connection string (Neon/Supabase). Empty = local SQLite fallback,
+    # so dev needs zero setup.
+    database_url: str = ""
+
+    # The shared read-only "demo" workspace: uploads to it are rejected unless
+    # this is set (used only when seeding the demo corpus).
+    allow_demo_writes: bool = False
+
 
 settings = Settings()

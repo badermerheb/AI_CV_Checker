@@ -69,8 +69,22 @@ export interface Stats {
 // at build time when the frontend is hosted separately (e.g. Vercel -> Render).
 const API_BASE: string = import.meta.env.VITE_API_BASE ?? ''
 
+// Anonymous per-browser workspace: uploads are private to this browser and layered
+// on top of the shared read-only demo corpus. No login needed.
+function workspaceId(): string {
+  let id = localStorage.getItem('workspace_id')
+  if (!id) {
+    id = crypto.randomUUID()
+    localStorage.setItem('workspace_id', id)
+  }
+  return id
+}
+
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
-  const response = await fetch(`${API_BASE}/api${path}`, init)
+  const response = await fetch(`${API_BASE}/api${path}`, {
+    ...init,
+    headers: { ...init?.headers, 'X-Workspace-Id': workspaceId() },
+  })
   if (!response.ok) {
     let detail = `${response.status} ${response.statusText}`
     try {

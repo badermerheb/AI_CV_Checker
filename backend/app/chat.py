@@ -64,14 +64,21 @@ def _format_context(nodes: list[NodeWithScore]) -> tuple[str, list[dict]]:
     return "\n\n".join(blocks), citations
 
 
-def _jobfit_nodes(query: str, *, mode: str, rerank: bool) -> tuple[list[NodeWithScore], list[dict]]:
+def _jobfit_nodes(
+    query: str, *, mode: str, rerank: bool, workspaces: list[str]
+) -> tuple[list[NodeWithScore], list[dict]]:
     """Best-fit ranking is aggregation, not plain top-k: score candidates by their
     best chunks against the job description, then surface a shortlist."""
-    pool = retrieve(query, mode=mode, rerank=False, top_k=JOBFIT_POOL, fetch_k=JOBFIT_POOL)
+    pool = retrieve(
+        query, mode=mode, rerank=False, top_k=JOBFIT_POOL, fetch_k=JOBFIT_POOL, workspaces=workspaces
+    )
 
-    by_candidate: dict[str, list[NodeWithScore]] = defaultdict(list)
+    # Key by (workspace, candidate) - the same CV can exist in demo and a user workspace.
+    by_candidate: dict[tuple[str, str], list[NodeWithScore]] = defaultdict(list)
     for node in pool:
-        by_candidate[node.node.metadata.get("candidate_id", "?")].append(node)
+        meta = node.node.metadata
+        key = (meta.get("workspace_id", "demo"), meta.get("candidate_id", "?"))
+        by_candidate[key].append(node)
 
     def candidate_score(nodes: list[NodeWithScore]) -> float:
         scores = sorted((n.score or 0.0 for n in nodes), reverse=True)
@@ -81,13 +88,15 @@ def _jobfit_nodes(query: str, *, mode: str, rerank: bool) -> tuple[list[NodeWith
     shortlist = shortlist[:JOBFIT_SHORTLIST]
 
     nodes: list[NodeWithScore] = []
-    for cid in shortlist:
-        best = sorted(by_candidate[cid], key=lambda n: n.score or 0.0, reverse=True)[:2]
+    for key in shortlist:
+        best = sorted(by_candidate[key], key=lambda n: n.score or 0.0, reverse=True)[:2]
         nodes.extend(best)
     if rerank and len(nodes) > 2:
         nodes = rerank_nodes(query, nodes, top_k=min(8, len(nodes)))
 
-    profiles = [p for cid in shortlist if (p := db.get_candidate(cid))]
+    profiles = [
+        p for ws, cid in shortlist if (p := db.get_candidate(cid, workspaces=[ws], prefer=ws))
+    ]
     return nodes, profiles
 
 
@@ -102,6 +111,11 @@ def _profiles_block(profiles: list[dict]) -> str:
     return "\n".join(lines)
 
 
+def workspace_scope(workspace_id: str) -> list[str]:
+    """A user sees their own uploads plus the shared demo corpus."""
+    return [workspace_id] if workspace_id == "demo" else [workspace_id, "demo"]
+
+
 def gather_context(
     message: str,
     history: list[dict],
@@ -109,23 +123,25 @@ def gather_context(
     mode: str,
     rerank: bool,
     routing: bool,
+    workspace_id: str = "demo",
 ) -> tuple[list[NodeWithScore], list[dict], RouteDecision]:
     """Route the question and fetch its context. Shared by chat() and the eval harness."""
+    workspaces = workspace_scope(workspace_id)
     decision = RouteDecision()
     if routing:
-        known = [c["name"] for c in db.list_candidates()]
+        known = [c["name"] for c in db.list_candidates(workspaces)]
         decision = route(message, history, known)
 
     profiles: list[dict] = []
     if decision.intent == "single_candidate":
         nodes = retrieve(
             message, mode=mode, rerank=rerank, top_k=TOP_K,
-            candidate_names=decision.candidate_names,
+            candidate_names=decision.candidate_names, workspaces=workspaces,
         )
     elif decision.intent == "job_fit":
-        nodes, profiles = _jobfit_nodes(message, mode=mode, rerank=rerank)
+        nodes, profiles = _jobfit_nodes(message, mode=mode, rerank=rerank, workspaces=workspaces)
     else:
-        nodes = retrieve(message, mode=mode, rerank=rerank, top_k=TOP_K)
+        nodes = retrieve(message, mode=mode, rerank=rerank, top_k=TOP_K, workspaces=workspaces)
     return nodes, profiles, decision
 
 
@@ -150,6 +166,7 @@ def chat(
     mode: str | None = None,
     rerank: bool | None = None,
     routing: bool | None = None,
+    workspace_id: str = "demo",
 ) -> dict:
     mode = settings.retrieval_mode if mode is None else mode
     rerank = settings.rerank if rerank is None else rerank
@@ -165,7 +182,8 @@ def chat(
 
         with tracing.retriever("route+retrieve", input=message) as retrieval_span:
             nodes, profiles, decision = gather_context(
-                message, history, mode=mode, rerank=rerank, routing=routing
+                message, history, mode=mode, rerank=rerank, routing=routing,
+                workspace_id=workspace_id,
             )
             if retrieval_span:
                 retrieval_span.update(
