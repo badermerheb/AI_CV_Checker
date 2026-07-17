@@ -36,11 +36,13 @@ Total cost: $0.
    a measured trade-off, not a downgrade. For the full pipeline including the
    reranker, use Hugging Face Spaces (16 GB) instead — section 2B.
 
-## 2B. Or: Hugging Face Spaces
+## 2B. Or: Hugging Face Spaces (no longer free)
 
-1. https://huggingface.co/spaces → Create Space → SDK: **Docker**.
-2. Push this repo to the Space (or link GitHub). Set `PORT=7860` in Space settings
-   → Variables, and add the other env vars as **Secrets**.
+As of mid-2026, HF moved **Docker SDK Spaces to paid** (Pro, ~$9/mo); the free
+Space types (Gradio/Static) cannot run this container. If on Pro: create a
+Docker Space, push the repo (README already carries the Space metadata), and add
+the env vars as Secrets — the full pipeline runs comfortably in 16 GB, so omit
+`RERANK`.
 
 ## 3. Seed the deployed app
 
