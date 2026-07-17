@@ -15,6 +15,9 @@ google-genai
 # tracing
 langfuse
 
+# relational store (Postgres when DATABASE_URL is set)
+psycopg[binary]
+
 # RAG core
 # NOTE: llama-index-embeddings-fastembed is NOT used - it pins Python <3.13.
 # app/embeddings.py wraps fastembed directly instead.
